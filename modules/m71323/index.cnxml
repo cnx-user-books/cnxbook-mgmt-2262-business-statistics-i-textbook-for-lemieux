@@ -1,0 +1,313 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+
+<title>One population means test when population standard deviation unknown - C Lemieux</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m71323</md:content-id>
+  <md:title>One population means test when population standard deviation unknown - C Lemieux</md:title>
+  <md:abstract>One population means test when population standard deviation unknown</md:abstract>
+  <md:uuid>f172efb5-27e0-47a4-b22e-b9ac7322ef53</md:uuid>
+</metadata>
+
+<content>
+  <para id="delete_me">While working through the previous section you may have had a question:</para><section id="eip-352"><title>If we don't know the population mean how do we know the population standard deviation?!?!?!?</title><para id="idm45772064351248">That's a really good question. The actual formula for the population standard deviation involves knowing the population mean: <m:math overflow="scroll"><m:mstyle displaystyle="true" scriptlevel="0"><m:mrow><m:msub><m:mi>σ</m:mi><m:mi>x</m:mi></m:msub><m:mo>=</m:mo><m:msqrt><m:mfrac><m:mrow><m:mo>∑</m:mo><m:msup><m:mrow><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>-</m:mo><m:mi>μ</m:mi><m:mo>)</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mrow><m:mi>n</m:mi></m:mfrac></m:msqrt></m:mrow></m:mstyle></m:math>. Therefore, if we don't know the population mean, how do we know the population standard deviation?</para>
+      <para id="idm45772064344912">There are two possible answers to this:</para>
+      <list id="idm45772064344480" display="block" list-type="enumerated">
+        <item id="uid25">In some long running process (e.g. manufacturing), the standard deviation may be very static. Therefore, the population standard deviation could be known even if the population mean isn't.
+</item>
+        <item id="uid26">We don't know the population standard deviation, so instead we estimate it with the sample standard deviation.
+</item>
+      </list>
+      <para id="idm45772064340448">It is fairly unlikely that in most situations, the population standard deviation will be known. Thus, we will focus on situations where the population standard deviation is unknown. In that case, we will use the sample standard deviation <m:math overflow="scroll"><m:mi>s</m:mi></m:math> to estimate the population standard deviation <m:math overflow="scroll"><m:msub><m:mi>σ</m:mi><m:mi>x</m:mi></m:msub></m:math>.</para><section id="eip-278"><title>Student-t Distribution</title><para id="idm45772064335008">To use this model to conduct a hypothesis test, we need to again assume that the sampling distribution of sample means is normal, and that the sample was collected randomly and is representative of the population. Just as we saw in the previous section, there are two general situations that need to occur to ensure the sampling distribution is normal:</para><list id="idm45772064334320" display="block" list-type="bulleted">
+        <item id="uid27">If the sample size is greater than 30, then the central limit theorem tells us that we can assume that the sampling distribution is approximately normal regardless of the population distribution. Thus, if the sample size is greater than 30, we can use this model.
+</item>
+        <item id="uid28">If the sample size is less than 30, the central limit theorem does not guarantee that the sampling distribution of the means will be normal. Therefore, <emphasis effect="bold">to use this model the population distribution needs to be approximately normal</emphasis> so that we know that the sampling distribution for sample means is normal.
+</item>
+      </list>
+      <para id="idm45772064330032">Since we don't know the population standard deviation, we will be using the sample standard deviation to estimate <m:math overflow="scroll"><m:msub><m:mi>σ</m:mi><m:mi>x</m:mi></m:msub></m:math>. That means we will be performing the hypothesis test using the sample mean and sample standard deviation. This suggests that there may be more error in our test as we are using two statistics rather than just one. To account for the greater error, we want the <emphasis effect="italics">p</emphasis>-value to be slightly bigger. That is, we want there to be more evidence before we reject the null hypothesis.  </para><para id="eip-363">When the population standard deviation is known, the test statistic was found by calculating <m:math>
+    
+      <m:mfrac><m:mrow><m:mover><m:mi>X</m:mi><m:mo>–</m:mo></m:mover>
+      <m:mo>-</m:mo><m:msub><m:mi>μ</m:mi><m:mn>0</m:mn></m:msub></m:mrow>
+      <m:mrow><m:mi>σ</m:mi><m:mo>/</m:mo><m:msqrt><m:mi>n</m:mi></m:msqrt>
+      </m:mrow></m:mfrac>
+     </m:math>. Since the population standard deviation is now unknown, we find the test statistic by calculating  <m:math>
+     <m:mfrac><m:mrow><m:mover><m:mi>X</m:mi><m:mo>–</m:mo></m:mover>
+      <m:mo>-</m:mo><m:msub><m:mi>μ</m:mi><m:mn>0</m:mn></m:msub></m:mrow>
+      <m:mrow><m:mi>s</m:mi><m:mo>/</m:mo><m:msqrt><m:mi>n</m:mi></m:msqrt>
+      </m:mrow></m:mfrac>
+     </m:math>. </para><para id="eip-703">To find the <emphasis effect="italics">p</emphasis>-value, we need to use a slightly different distribution than the standard normal distribution. In particular, we want to use a distribution that has a greater standard deviation than the standard normal distribution. This will make the distribution slightly wider, which result in the <emphasis effect="italics">p</emphasis>-value being slightly bigger compared to the standard normal distribution. The distribution we will use is called the <emphasis>Student-t distribution </emphasis>. It has the same mean as the standard normal distribution (0), but it's standard deviation is larger than the standard normal (i.e. greater than 1). To illustrate, consider the image below: </para>
+      
+      <para id="eip-654"><figure id="eip-idm1273668960"><media id="pvalue" alt="Difference between p-value for standard normal distribution vs. Student-t distribution.">
+	   
+  <image mime-type="image/png" src="../../media/pvalue.png"/>
+		 
+</media>
+<caption>Difference between p-value for standard normal distribution vs. Student-t distribution</caption></figure></para><para id="eip-284">Some points about Figure 1:
+<list id="eip-idm366674992">
+<item>Notice how both distributions are centred at 0. That is, they both have a mean of 0. </item>
+<item>Notice how the Student-t distribution is wider than the standard normal distribution. This is because the standard normal distribution has a standard deviation of 1, while the Student-t distribution has a standard deviation of greater than 1.  </item>
+<item> The p-value for the standard normal distribution is shown as the area highlighted in red. While the p-value for the Student-t distribution is highlighted by the blue lines. Notice that for the same test statistic, the standard normal distribution has a SMALLER p-value compared to the Student-t distribution.</item>
+<item>This means that for the same test statistic it is HARDER to reject the null hypothesis for the Student-t distribution than it is for the standard normal distribution.  </item>
+<item> That is, the Student-t distribution accounts for the greater error in the hypothesis test due to the standard deviation being estimated by having larger p-values compared to the standard normal distribution. </item>
+</list></para><para id="eip-669"><title>Information about the Student-t distribution</title><list id="eip-idm1174353200">
+<item>The Student-<m:math overflow="scroll"><m:mi>t</m:mi></m:math> distribution is a normal distribution with <m:math overflow="scroll"><m:mrow><m:mi>μ</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>σ</m:mi><m:mo>&gt;</m:mo><m:mn>1</m:mn></m:mrow></m:math>. The standard deviation of the Student <m:math overflow="scroll"><m:mi>t</m:mi></m:math> distribution is different for different sample size. Remember that the standard normal distribution is a normal distribution with <m:math overflow="scroll"><m:mrow><m:mi>μ</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>σ</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math>. Therefore, the Student-<m:math overflow="scroll"><m:mi>t</m:mi></m:math> distribution is centred at the same place as the standard normal distribution, but has greater variation so it is slightly wider and shorter. See <link target-id="uid33"/>.
+</item>
+        <item>The smaller the sample size, the greater the variability is in the sampling distribution. When the sample size is larger, there is less variability in the sampling distribution. These aspects are reflected in shape of the Student-<m:math overflow="scroll"><m:mi>t</m:mi></m:math> distribution.
+</item>
+        <item>As the sample size <m:math overflow="scroll"><m:mi>n</m:mi></m:math> gets larger, the Student-<m:math overflow="scroll"><m:mi>t</m:mi></m:math> distribution gets closer to the standard normal distribution.
+</item>
+</list></para><para id="idm45772064298160">The standard deviation of the Student-<m:math overflow="scroll"><m:mi>t</m:mi></m:math> distribution is based on the <emphasis effect="bold">degrees of freedom</emphasis>, which in turn are based on the sample size. The number of degrees of freedom for a sample corresponds to the number of data values that can vary after certain
+restrictions have been imposed on all data values. Another way of saying it, is the degrees of freedom are the number of components that need to be known before a statistic is entirely determined. Depending on the model used, the degrees of freedom have a different formula. For this model (i.e. one population mean when population standard deviation is unknown), the degrees of freedom are the sample size minus 1, i.e. <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:math>.</para>
+      </section></section><section id="eip-730"><title>Eight-step hypothesis test for one population mean when population standard deviation is unknown</title><para id="eip-2">
+Compare these steps to when the population standard deviation is known and you will find a lot of overlap. Notice when they are DIFFERENT!
+</para>
+
+<list id="eip-idm404501200" list-type="enumerated" number-style="arabic" class="stepwise"><item><emphasis effect="bold">State <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ and <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+</emphasis>. As this is a one-population means test, our hypotheses will include the symbol <m:math>
+ <m:ci>μ</m:ci></m:math>
+. There are three versions of the alternative hypothesis and there opposing null hypotheses: <list id="eip-idm318477824"><item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+ <m:ci>μ</m:ci></m:math>
+&gt; some number (<m:math>
+<m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>) vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:leq/><m:ci>μ</m:ci><m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math> </item> 
+
+<item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+ <m:ci>μ</m:ci></m:math>
+&lt; some number (<m:math>
+<m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>) vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:geq/><m:ci>μ</m:ci><m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math>  </item> 
+
+<item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+ <m:ci>μ</m:ci></m:math>
+≠ some number (<m:math>
+<m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>) vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:eq/><m:ci>μ</m:ci><m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math>  </item> 
+</list><para id="eip-548">For ease, we often write the null hypothesis simply as <m:math>
+<m:apply><m:eq/><m:ci>μ</m:ci><m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math> as we only care about the equality for the null. This results in the following:</para><list id="eip-759"><item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+ <m:ci>μ</m:ci></m:math>
+&gt; <m:math>
+<m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math> vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:eq/><m:ci>μ</m:ci><m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math> (right-tailed test)</item> 
+
+<item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+ <m:ci>μ</m:ci></m:math>
+&lt; <m:math>
+<m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math> vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:eq/><m:ci>μ</m:ci><m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math> (left-tailed test) </item> 
+
+<item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+ <m:ci>μ</m:ci></m:math>
+≠ <m:math>
+<m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math> vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:eq/><m:ci>μ</m:ci><m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math> (two-tailed test) </item> </list><para id="eip-977">Notice how "some number" (i.e. <m:math>
+<m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>) is the same both for <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math> and <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>. This is because they are opposites of each other. Therefore, the only thing that changes is the binary sign between them. 
+</para></item>
+<item><emphasis effect="bold">Summarize the sample data</emphasis>. For a one population means test when the population standard deviation is unknown, your evidence will consist of the sample mean, the sample standard deviation, and the sample size. 
+
+</item>
+<item><emphasis effect="bold">State and justify the model (or distribution) being used</emphasis>. As we are doing a hypothesis test for one population mean when the population standard deviation is unknown, we will be using the Student-t distribution as our model. To use this model, we need to determine two things: 
+<list id="eip-idm365427168">
+<item> Is the population standard deviation unknown? If the population standard deviation is not clearly given to you, then the population standard deviation is unknown and we should use the Student-t distribution. </item>
+<item> Is the sampling distribution of sample means normally distributed? To determine this, we use the central limit theorem:
+<list id="eip-idm359861904"><item> Is the sample size greater than 30? If yes, then the sampling distribution will be approximately normal regardless of the shape of the parent population. </item>
+<item> If the sample size is less than 30, then we need to determine if the population distribution is normal. Because if the population distribution is normal, then the sampling distribution of sample means is normal regardless of the sample size. Either the shape of the population distribution will be stated in the question or you can determine it by examining a normal probability plot. </item> 
+<item> If the sample size is less than 30 and the population distribution is not normal, you do NOT have the knowledge to perform this hypothesis test. </item> </list> </item>
+</list> </item>
+<item><emphasis effect="bold">Choose an appropriate level of significance.</emphasis> Consider the implications of a Type I vs. a Type II error in choosing your level of significance, as well as any ethical considerations.</item>
+
+<item><emphasis effect="bold">Calculate the test statistic and related <emphasis effect="italics">p</emphasis>-value</emphasis>. The test statistic for this situation is <m:math>
+<m:apply><m:power/><m:ci>t</m:ci><m:cn>*</m:cn></m:apply>
+</m:math>= <m:math>
+     <m:mfrac><m:mrow><m:mover><m:mi>X</m:mi><m:mo>–</m:mo></m:mover>
+      <m:mo>-</m:mo><m:msub><m:mi>μ</m:mi><m:mn>0</m:mn></m:msub></m:mrow>
+      <m:mrow><m:mi>s</m:mi><m:mo>/</m:mo><m:msqrt><m:mi>n</m:mi></m:msqrt>
+      </m:mrow></m:mfrac>
+     </m:math>. The <emphasis effect="italics">p</emphasis>-value is then found by finding the probability in the tail of the Student-t distribution where the test statistic is the boundary of the tail. 
+<list id="eip-idm1291905248">
+<item>If it is a right-tailed test, find P(T &gt; <m:math>
+<m:apply><m:power/><m:ci>t</m:ci><m:cn>*</m:cn></m:apply>
+</m:math> )  </item>
+
+<item>If it is a left-tailed test, find P(T &lt; <m:math>
+<m:apply><m:power/><m:ci>t</m:ci><m:cn>*</m:cn></m:apply>
+</m:math> )  </item>
+<item>If it is a two-tailed test, find P(T &gt; |<m:math>
+<m:apply><m:power/><m:ci>t</m:ci><m:cn>*</m:cn></m:apply>
+</m:math>| ) times 2.  </item>
+
+</list>
+
+
+ </item>
+<item><emphasis effect="bold">Discuss what the <emphasis effect="italics">p</emphasis>-value measures in context</emphasis>. Your sentence will look something like this: The probability we observed a sample mean of [insert appropriate inequality based on tail of test] ** [include relevant units], assuming [insert null hypothesis] is true, is [insert <emphasis effect="italics">p</emphasis>-value].</item>
+<item><emphasis effect="bold">Make a decision.</emphasis> 
+<list id="eip-idm1310056528"><item>Do not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ if <emphasis effect="italics">p</emphasis>-value is greater than or equal to <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+ </item>
+<item>Reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ if <emphasis effect="italics">p</emphasis>-value less than <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+ </item>
+</list>
+</item>
+<item><emphasis effect="bold">Offer a concluding sentence.</emphasis> Using accessible language summarize your conclusion in sentence form within the context of the problem and referring to the alternative hypothesis.</item>
+</list></section><example id="eip-657"><para id="eip-246">Smurf Box Company has been running into some problems lately. In particular, the machine that produces cardboard boxes needs to be replaced. The purchaser at Smurf is trying to choose between two machines. Both machines produce good quality boxes, but she wants to determine if there is a difference in the average number of boxes produced per hour. To investigate, she randomly eight of the machine operators out of the forty in the shop and, after training on the new machines, had each operator produce as many boxes as they could in a one hour period. She recorded the number of boxes produced by each operator in a one period. Then, for each operator, she compared the number of boxes produced per machine by finding subtracting the number of boxes produced on Machine 1 (M1) by the number of boxes produced on Machine 2 (M2), that is she found M1-M2. The results are in the table below. 
+</para><table id="eip-591" summary="Differences in number of boxes produced by different machine operators for two machines"><title>Machine Operator</title>
+<tgroup cols="9"><tbody>
+  <row>
+    <entry> </entry>
+    <entry>1</entry>
+    <entry>2</entry>
+    <entry>3</entry>
+    <entry>4</entry>
+    <entry>5</entry>
+    <entry>6</entry>
+    <entry>7</entry>
+    <entry>8</entry>
+  </row>
+  <row>
+    <entry>Machine 1</entry>
+    <entry>53</entry>
+    <entry>60</entry>
+    <entry>58</entry>
+    <entry>48</entry>
+    <entry>46</entry>
+    <entry>54</entry>
+    <entry>62</entry>
+    <entry>49</entry>
+  </row>
+  <row>
+    <entry>Machine 2</entry>
+    <entry>50</entry>
+    <entry>55</entry>
+    <entry>56</entry>
+    <entry>44</entry>
+    <entry>45</entry>
+    <entry>50</entry>
+    <entry>57</entry>
+    <entry>47</entry>
+  </row>
+  <row>
+    <entry>M1-M2</entry>
+    <entry>3</entry>
+    <entry>5</entry>
+    <entry>2</entry>
+    <entry>4</entry>
+    <entry>1</entry>
+    <entry>4</entry>
+    <entry>5</entry>
+    <entry>2</entry>
+  </row>
+</tbody>
+</tgroup>
+</table><list id="eip-870" list-type="enumerated" number-style="lower-alpha"><item>Assuming that the population of differences is normally distributed, perform a hypothesis test to determine whether there is a difference between the mean number of boxes produced per hour by the two machines. </item>
+<item>Is there a level of significance that would cause you to change your decision? If so, what is it? If not, why not?</item>
+<item>If an error has been committed, what type is it? What would the error be?</item></list><section id="eip-764"><title>Solution</title><list id="eip-idm1770788016" list-type="enumerated" number-style="lower-alpha"><item>
+<list id="eip-idm308444864" list-type="enumerated" number-style="arabic" class="stepwise"><item><emphasis effect="bold">State <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ and <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+</emphasis>. We define  <m:math>
+ <m:ci>μ</m:ci></m:math> in this problem to be the population mean difference in the number of boxes produced by both machines. 
+
+ <newline/><m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+: <m:math>
+<m:apply><m:neq/><m:ci>μ</m:ci><m:cn>0</m:cn></m:apply>
+</m:math>
+ <newline/><m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+: <m:math>
+<m:apply><m:eq/><m:ci>μ</m:ci><m:cn>0</m:cn></m:apply>
+</m:math>
+     
+<newline/> Note: This is a two-tailed test. 
+
+</item>
+<item><emphasis effect="bold">Summarize the sample data</emphasis>. The sample size is 8, the sample mean is 3.25 minutes, and the sample standard deviation is 1.488 minutes.</item>
+<item><emphasis effect="bold">State and justify the model (or distribution) being used</emphasis>. As the population standard deviation is unknown and this is a one population means tests, we want to use the Student-t distribution. To do this, we need to ensure that the sampling distribution of sample means is normal. As we are told that it is likely that the population distribution of the differences is normally distributed, we can assume the sampling distribution of sample means is approximately normal. Therefore it is appropriate to do model this situation using the Student-t distribution. </item>
+
+
+<item><emphasis effect="bold">Choose an appropriate level of significance.</emphasis> As the purchase of a new machine is a substantial investment, the purchaser would want strong evidence that there is a difference in the output of the machines. Therefore, she would want to set the level of significance at 1% (the LofS that requires the strongest evidence to reject the null. This means, that we reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ if the <emphasis effect="italics">p</emphasis>-value &lt; 0.01.</item>
+
+
+<item><emphasis effect="bold">Calculate the test statistic and related <emphasis effect="italics">p</emphasis>-value</emphasis>. The test statistic is found as follows: t* = (3.25-0)/(1.488/√8) = 6.177. As it is a two-tailed test, we find 2*P(T&gt; 6.177) using the Excel function "=TDIST(6.177,7,2)" [TDIST(test stat, degrees of freedom, tail of test)]. This gives us p = 0.00046. </item>
+
+
+<item><emphasis effect="bold">Discuss what the <emphasis effect="italics">p</emphasis>-value measures in context</emphasis>. The probability of getting a sample mean of at least 3.25 (times 2), with an assumed population mean 0 for the difference in output of the two machines, is 0.46%. </item>
+
+
+<item><emphasis effect="bold">Make a decision.</emphasis> Since p (0.00046) &lt; 0.01, we reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+. </item>
+
+
+<item><emphasis effect="bold">Offer a concluding sentence.</emphasis> There is sufficient evidence to indicate that there is a difference between the mean number of boxes produced per hour by the two machines.</item>
+
+</list></item>
+<item> Levels of significance are usually between 1% and 10%. As the p-value is clearly less than 1%, there is no level of significance that would cause us to change our mind.</item>
+<item> If an error is committed, it would be a type I error. In this case, the error would be the purchaser concluding that there is a mean difference in the number of boxes produced by the machines per hour, when in fact there is not.  </item></list></section>
+</example></content>
+
+</document>

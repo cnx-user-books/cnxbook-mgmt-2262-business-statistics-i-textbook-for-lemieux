@@ -1,0 +1,31 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+
+<title>Eight-Step Hypothesis Test - C Lemieux</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m71318</md:content-id>
+  <md:title>Eight-Step Hypothesis Test - C Lemieux</md:title>
+  <md:abstract/>
+  <md:uuid>8244fe50-c045-4b85-9d67-ac79be7f56da</md:uuid>
+</metadata>
+
+<content>
+  <para id="delete_me">In this class, we will learn three hypothesis tests: 
+
+  </para><list id="eip-833"><item>One population mean test when population standard deviation known</item>
+<item>One population mean test when population standard deviation unknown</item>
+<item>One population proportion test</item></list><para id="eip-546">Regardless of the test we are doing, you are required to follow an eight-step procedure for doing the test:</para><list id="eip-341" list-type="enumerated" number-style="arabic" class="stepwise"><item><emphasis effect="bold">State <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ and <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+</emphasis>. This includes stating what the parameter represents.</item>
+<item><emphasis effect="bold">Summarize the sample data</emphasis>. For a means test, your evidence will consist of the sample mean, the standard deviation (which may be the sample or population), and the sample size. For a proportions test, your evidence will consist of the sample proportion and the sample size.</item>
+<item><emphasis effect="bold">State and justify the model (or distribution) being used</emphasis>. Determine what model or distribution you use (e.g. standard normal distribution or binomial distribution). This will included justifying the choice by referring to the conditions needed to use the model or distribution. </item>
+<item><emphasis effect="bold">Choose an appropriate level of significance.</emphasis> Consider the implications of a Type I vs. a Type II error in choosing your level of significance, as well as any ethical considerations.</item>
+<item><emphasis effect="bold">Calculate the test statistic and related <emphasis effect="italics">p</emphasis>-value</emphasis>. Using the summaries of the sample data and Excel, compute the test statistic and the associated <emphasis effect="italics">p</emphasis>-value.</item>
+<item><emphasis effect="bold">Discuss what the <emphasis effect="italics">p</emphasis>-value measures in context</emphasis>. This involves interpreting what the <emphasis effect="italics">p</emphasis>-value is a probability of in the context of the question. It does not involve making a decision (that comes next).</item>
+<item><emphasis effect="bold">Make a decision.</emphasis> Compare the <emphasis effect="italics">p</emphasis>-value to the required strength of evidence (alpha) and determine if you can reject or fail to reject the null hypothesis.</item>
+<item><emphasis effect="bold">Offer a concluding sentence.</emphasis> Using accessible language summarize your conclusion in sentence form within the context of the problem and referring to the alternative hypothesis.</item></list></content>
+
+</document>

@@ -1,0 +1,120 @@
+<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en">
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+    <md:content-id>col26237</md:content-id>
+    <md:title>Mgmt 2262 - Business Statistics I Textbook for Lemieux</md:title>
+    <md:language>en</md:language>
+    <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</md:license>
+    <md:uuid>bc9d47e2-3f86-47d9-9200-7a420adb4825</md:uuid>
+<md:slug>mgmt-2262-business-statistics-i-textbook-for-lemieux</md:slug>
+</metadata>
+  <col:content>
+    <col:subcollection>
+      <md:title>Unit 1 - Data collection and descriptive statistics</md:title>
+      <col:content>
+        <col:subcollection>
+          <md:title>Chapter 1 - Data collection</md:title>
+          <col:content>
+            <col:module document="m62095"/>
+            <col:module document="m64281"/>
+            <col:module document="m64275"/>
+            <col:module document="m62317"/>
+          </col:content>
+        </col:subcollection>
+        <col:subcollection>
+          <md:title>Chapter 2 - Descriptive statistics</md:title>
+          <col:content>
+            <col:module document="m64282"/>
+            <col:module document="m64906"/>
+            <col:module document="m64905"/>
+            <col:module document="m64907"/>
+            <col:module document="m71327"/>
+          </col:content>
+        </col:subcollection>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>Unit 2 - Probability</md:title>
+      <col:content>
+        <col:subcollection>
+          <md:title>Chapter 3 - Probability topics</md:title>
+          <col:content>
+            <col:module document="m62328"/>
+            <col:module document="m62337"/>
+            <col:module document="m54220"/>
+            <col:module document="m62330"/>
+          </col:content>
+        </col:subcollection>
+        <col:subcollection>
+          <md:title>Chapter 4 - Binomial distribution and introduction to evaluating evidence</md:title>
+          <col:content>
+            <col:module document="m64919"/>
+            <col:module document="m64918"/>
+          </col:content>
+        </col:subcollection>
+        <col:subcollection>
+          <md:title>Chapter 5 - Normal distribution</md:title>
+          <col:content>
+            <col:module document="m62345"/>
+            <col:module document="m64939"/>
+            <col:module document="m64940"/>
+          </col:content>
+        </col:subcollection>
+        <col:subcollection>
+          <md:title>Chapter 6 - Sampling distribution</md:title>
+          <col:content>
+            <col:module document="m64933"/>
+            <col:module document="m64932"/>
+            <col:module document="m64934"/>
+            <col:module document="m64935"/>
+            <col:module document="m64931"/>
+          </col:content>
+        </col:subcollection>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>Unit 3 - Inferential statistics</md:title>
+      <col:content>
+        <col:subcollection>
+          <md:title>Chapter 7 - Hypothesis Testing</md:title>
+          <col:content>
+            <col:module document="m71303"/>
+            <col:module document="m71317"/>
+            <col:module document="m71318"/>
+            <col:module document="m71325"/>
+            <col:module document="m71323"/>
+            <col:module document="m71320"/>
+          </col:content>
+        </col:subcollection>
+        <col:subcollection>
+          <md:title>Chapter 8 - Confidence Intervals</md:title>
+          <col:content>
+            <col:module document="m65024"/>
+            <col:module document="m65023"/>
+            <col:module document="m65026"/>
+            <col:module document="m65027"/>
+            <col:module document="m65028"/>
+            <col:subcollection>
+              <md:title>Practice questions for unit</md:title>
+              <col:content>
+                <col:module document="m65288"/>
+              </col:content>
+            </col:subcollection>
+          </col:content>
+        </col:subcollection>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>Unit 4 - Simple linear regression</md:title>
+      <col:content>
+        <col:subcollection>
+          <md:title>Chapter 9 - Simple linear regression</md:title>
+          <col:content>
+            <col:module document="m62290"/>
+            <col:module document="m62293"/>
+            <col:module document="m62297"/>
+          </col:content>
+        </col:subcollection>
+      </col:content>
+    </col:subcollection>
+  </col:content>
+</col:collection>

@@ -1,0 +1,734 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+
+<title>Overview of hypothesis testing - C Lemieux</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m71317</md:content-id>
+  <md:title>Overview of hypothesis testing - C Lemieux</md:title>
+  <md:abstract>Overview of hypothesis testing</md:abstract>
+  <md:uuid>9f789ed7-7793-44bb-9324-288e7282fe46</md:uuid>
+</metadata>
+
+<content>
+  <section id="eip-899"><title>Goal of section</title><para id="eip-496">The goal of this section is to familiarize ourselves with the general process of hypothesis testing and to learn key terms. The specific type of hypothesis testing we are examining is called <emphasis>null hypothesis significance testing</emphasis>. In later sections we will look at specific hypothesis tests. 
+</para></section><section id="eip-629"><title>General process of hypothesis testing</title><para id="eip-890">
+Hypothesis tests are often used by researchers to evaluate their evidence against a certain assumption. The basic steps that they go through are as follows:
+</para><list id="eip-819" list-type="enumerated" number-style="arabic"><item> <emphasis>Come up with hypothesis</emphasis>: The fundamental part of doing a hypothesis test is having a hypothesis to investigate. The hypothesis we are investigating is usually the alternative hypothesis, while its opposite is called the null hypothesis. </item>
+<item> <emphasis>Gather evidence</emphasis>: Once you have a hypothesis, you want to gather evidence to investigate it. In statistics, the evidence is sample data.  </item>
+<item> <emphasis>Determine the level of significance</emphasis>: As mentioned in the introduction, when doing hypothesis testing, we can either reject or not reject the null hypothesis. To determine which decision to make, we need a threshold between the evidence is strong enough to make us question our assumption (the null hypothesis) or not. We call the threshold "the level of significance". </item>
+<item> <emphasis>Evaluate the evidence</emphasis>: To evaluate the evidence, we need to determine how unlikely it is we observed our evidence (or even better evidence against the null hypothesis), assuming the null hypothesis is true. We then use our level of significance (or threshold) to decide whether to reject or not reject the null hypothesis. To evaluate the evidence we need to use a model or distribution. We will be using the distributions we've already learned in class (i.e. the standard normal distribution and the binomial distribution) and some new ones.  </item>
+<item> <emphasis>Make a conclusion</emphasis>: Once we've made our decision, we need to communicate our conclusion about the original hypothesis in a way that people unfamiliar with statistics may understand.   </item></list><para id="eip-654">Though the steps have presented in a certain order, they don't necessarily have to follow the order provided. For example, choosing the level of significance could be done in the first, second or third step. But it would not be appropriate to do it after evaluating the evidence as that could result in the researcher biasing the results by choosing a level of significance that allows them to make the decision they want to make. </para><para id="eip-720">But some steps have to follow other steps. For example, you cannot evaluate the evidence without first knowing the hypotheses, gathering the evidence, and choosing the level of significance. </para><para id="eip-210">For the remainder of this section, we will discuss the process of hypothesis testing in more detail.</para></section><section id="eip-499"><title>Null and alternative hypotheses</title><para id="eip-480">The <emphasis>alternative hypothesis</emphasis> is sometimes called the research hypothesis. We use the symbol <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>or <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>1</m:mi></m:msub></m:ci>
+</m:math> to represent the alternative hypothesis. The alternative hypothesis is often the hypothesis that we are investigating. 
+</para><para id="eip-870">The <emphasis>null hypothesis</emphasis>, on the other hand, is the opposite of the alternative hypothesis. It is represented with the symbol <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>, which is pronounced "H nought". </para><para id="eip-614">For example, suppose you are investigating the hypothesis that, on average, people sleep less than 8 hours a night. The alternative hypothesis (aka the research hypothesis) would be "on average, people sleep less than 8 hours a night". The null hypothesis is the opposite of that. This means that instead of claiming that the average is <emphasis effect="italics">less than</emphasis> 8, the null hypothesis states that "on average, people sleep <emphasis effect="italics"> at least </emphasis> 8 hours a night". </para><para id="eip-17">The alternative hypothesis is the statement that something has changed, is different, is not the same. While the null hypothesis is the statement that nothing has changed, nothing is different, and it is the same. Due to this, the null hypothesis always needs to include an equality to indicate that something is the same. Thus, the null hypothesis, when written symbolically, usually includes either <m:math>
+<m:apply><m:eq/><m:apply><m:leq/><m:ci/><m:ci>,</m:ci></m:apply><m:apply><m:geq/><m:ci>,</m:ci><m:ci/></m:apply></m:apply>
+</m:math>. The alternative hypothesis, on the other hand, when written symbolically usually includes <m:math>
+<m:apply><m:neq/><m:apply><m:lt/><m:ci/><m:ci>,</m:ci></m:apply><m:apply><m:gt/><m:ci>,</m:ci><m:ci/></m:apply></m:apply>
+</m:math></para><para id="eip-500">So, for the example about sleep above, we can write the alternative hypothesis symbolically as <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:lt/><m:ci>μ</m:ci><m:cn>8</m:cn></m:apply>
+</m:math>. Similarly we can write the null hypothesis as <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:geq/><m:ci>μ</m:ci><m:cn>8</m:cn></m:apply>
+</m:math>. Here, <m:math>
+ <m:ci>μ</m:ci></m:math>
+ is the population mean amount of sleep people get at night.</para><para id="eip-645">Notice that the null and alternative hypothesis are about <m:math>
+ <m:ci>μ</m:ci></m:math>, the population mean. When doing hypothesis tests, we are always testing something about a parameter (a feature of the population). Therefore, the hypotheses are always written about a population parameter (e.g. <m:math>
+ <m:ci>μ</m:ci></m:math> or  <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>). </para><section id="eip-166"><title>Tail of the test</title><para id="eip-958">In a hypothesis test, we are evaluating the evidence by determining how unlikely it is we observed our evidence (or even better evidence against the null hypothesis), assuming the null hypothesis is true. The "even better evidence against the null hypothesis" is defined by the tail of the test. In particular, if we have a sample statistic, the tail would be the statistics that would provide better evidence against the null hypothesis. For example, if our sample mean number of hours of sleep was 7.5 hours, then the tail would be any sample mean less than 7.5 hours  because getting less than 7.5 hours sleep (e.g. 7.4, 7, 6.2 hours) is even better evidence against the assumption that people get 8 hours of sleep, on average, per night. Therefore, sample means to the LEFT of the sample mean found in our evidence would be in the tail. Hence, we would call this type of test a <emphasis> left-tailed test </emphasis>. The tail of the test is usually found by examining the direction of the alternative hypothesis. 
+<list id="eip-idm389690992"><item>If <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+has a "less than" symbol, then it is a left tailed test.   </item>
+<item>If <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+has a "not equal to" symbol, then it is a two tailed test.   </item>
+<item>If <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+has a "greater than" symbol, then it is a right tailed test.   </item>
+</list></para></section><note id="eip-583" type="important"><title>Assumption to start hypothesis test</title>Since the alternative hypothesis is usually the hypothesis we are trying to investigate, it would be inappropriate to assume the alternative hypothesis is true. If we did this, we would be introducing confirmation bias. Instead, we want to assume the opposite of what we want to show to be true and, under this assumption, determine if the evidence is strong enough to make us question our assumption. Thus, a fundamental idea is that <emphasis>we start the hypothesis test under the assumption the null hypothesis is true</emphasis>. This is why it is called a null hypothesis significance test. </note><para id="eip-779"><title>Analogy: Murder trial</title>Hypothesis testing is analogous to criminal trials. When a prosecutor puts someone on trial for murder, they do so because they believe the person is guilty (the alternative hypothesis). But in our criminal justice system, we assume the person is innocent (the null hypothesis) until enough evidence is presented to make us question that assumption. Or, in other words, until the jurors believe the person is guilty beyond a reasonable doubt. If jurors started a trial with the assumption of guilt, all of the evidence would be coloured by that assumption. Meaning, they would be predisposed to see any piece of evidence as evidence of guilt. Instead, we want jurors to assume that the defendant is innocent and be persuaded by the evidence. This is the same idea in hypothesis testing, a researcher believes the claim they are making is the right one (i.e. they believe the alternative hypothesis is right), but they start off by assuming the opposite of what they want to show (i.e. the null hypothesis is true) to avoid bias. </para><para id="eip-82">Hypothesis testing and science are intimately related. One of the defining features of science is the <emphasis>principal of falsification</emphasis>, which essentially states that a hypothesis has the potential to be falsified (not that it has to be, only that it can be). Without this principal, we would only look for evidence that supports our beliefs. In hypothesis testing, we start from the assumption of the opposite of what we want to show to avoid this tendency to only look for evidence that supports our beliefs. If you are interested, watch this video by Crash Course that explains the difference between science and pseudoscience: <link url="https://www.youtube.com/watch?v=-X8Xfl0JdTQ" window="new">https://www.youtube.com/watch?v=-X8Xfl0JdTQ</link>. In particular, pay attention to the part where the narrator explains the difference between the types of experiments Freud was doing (which involved confirmation bias) and the ones Einstein were doing. </para><example id="eip-718"><para id="element-508">We want to test whether the mean GPA of students in Canadian universities is different from 2.0 (out of 4.0). The null and alternative hypotheses are:
+<newline/><m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+: <m:math>
+ <m:ci>μ</m:ci></m:math>
+ = 2.0
+<newline/><m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+: <m:math>
+ <m:ci>μ</m:ci></m:math>
+ ≠ 2.0 </para></example><note id="eip-967"><title>Try It</title><exercise id="eip-idm347635536"><problem id="fs-idm16416">
+<para id="eip-247">We want to test whether the mean height of eighth graders is 165 centimeters. State the null and alternative hypotheses. Fill in the correct symbol (=, ≠, ≥, &lt;, ≤, &gt;) for the null and alternative hypotheses.
+<list id="eip-idm122826912" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">μ</emphasis> __ 165 cm</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">μ</emphasis> __ 165 cm</item>
+</list></para></problem>
+<solution id="fs-idm29282496">
+<list id="fs-idp94139648" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">H<sub>0</sub></emphasis> : <emphasis effect="italics">μ</emphasis> = 165 cm</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis> : <emphasis effect="italics">μ</emphasis> ≠ 165 cm</item>
+</list>
+</solution></exercise></note><note id="eip-193"><label/><title>Try It</title>
+
+<exercise id="fs-idm126344352">
+<problem id="fs-idm54604944">
+<para id="fs-idm131727840">On a state driver’s test, about 40% pass the test on the first try. We want to test if more than 40% pass on the first try. Fill in the correct symbol (=, ≠, ≥, &lt;, ≤, &gt;) for the null and alternative hypotheses.
+<list id="eip-idp142654064" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ __ 0.40</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ __ 0.40</item>
+</list>
+Recall that the Greek letter pi (<m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+) represents a population proportion.</para></problem>
+<solution id="fs-idm46325088">
+<list id="eip-idp10451920" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ = 0.40</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ &gt; 0.40</item>
+</list></solution>
+</exercise></note></section><section id="eip-850"><title>Gather evidence</title><para id="eip-402">
+The evidence in a hypothesis test is sample data. To do a hypothesis test, we need to randomly collect our data and we want our sample to be representative of the population. Further the results of our test have more veracity if the sample size is larger. We have discussed in Unit 1 how to collect data. 
+</para><para id="eip-655">Once we have our data, we will generate appropriate descriptive statistics both to help others know what our data says and also to determine if our original hypothesis is even viable. For example, suppose we gather data to investigate if, on average, people sleep for less than 8 hours in a day. Then, when we summarize that data, we find that the mean sleep time of our sample is 10 hours. That certainly suggests that our original hypothesis is not correct and we may want to revise our ideas. </para><para id="eip-745">When doing a hypothesis test, we are always gathering sample data. If we could gather data about the whole population we wouldn't bother doing a hypothesis test. Remember that a hypothesis test is a type of inferential statistics where we use sample data to make a conclusion about the population as a whole. Thus, if we had the population data, a hypothesis test would not be necessary. </para><note id="eip-523"><title>Summary</title>The alternative and null hypotheses are always about the population parameter. When we gather evidence it is always sample data. </note><para id="eip-755"><title>Analogy: Murder trial</title>Going back to the analogy about a murder trial, the evidence might be a strong motive, a smoking gun, no alibi, a witness, physical evidence etc. But all of this evidence has to be relevant to the trial (i.e. a smoking gun from a completely different murder trial would not be evidence for this murder trial). In hypothesis testing, the evidence is always the sample data from the relevant population. </para></section><section id="eip-288"><title>Determine the level of significance</title><para id="eip-310">
+To reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math> or to not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>, that is the question. 
+</para><para id="eip-685">The level of significance is the threshold between when we reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math> and when we do not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>. The symbol we use for the level of significance is the Greek letter alpha: 
+<m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>.</para><para id="eip-917"><title>Analogy: Murder trial</title>In a murder trial, the threshold between rejecting innocence and, thus, finding the defendant guilty is "beyond a reasonable doubt". But "beyond a reasonable doubt" is a nebulous idea. Two different juries could be presented with the exact same evidence and one could decide to find the defendant guilty while the other might find them not guilty. That is, the threshold between rejecting the assumption of innocence is ill-defined. In hypothesis testing, we want the threshold to be more clearly defined so that if two researchers were presented with the same sample and had the same hypothesis, they would come to the same conclusion. </para><para id="eip-481">To review, we begin our hypothesis test by assuming the null hypothesis is true. We then collect sample data in an effort to determine how unlikely it is that we observed our sample data (or even better evidence against the null hypothesis), assuming the null hypothesis is true. If it unlikely that we observed the evidence, then we will question the assumption (i.e. the null hypothesis) and this will lead to us reject the null hypothesis. The threshold (aka the level of significance) is when we would deem the evidence to be unlikely (under the assumption). The idea of unlikely is a probabilistic idea and thus we define our level of significance by a probability. In particular, <emphasis>an event is unlikely is the probability of it occurring is small</emphasis>. Therefore, we want the threshold to be a small percentage (or probability). Due to this, the level of significance is usually chosen to be a value between 1% and 10%, but most studies choose 1% or 5% as their level of significance. We'll discuss why later when we talk about errors in hypothesis testing. </para></section><section id="eip-106"><title>Evaluate evidence</title><para id="eip-419">To summarize what has happened so far, we've determined our alternative hypothesis, which defined our null hypothesis (as the two hypotheses are opposites of each other). We have gathered our evidence (i.e. sample data) and chosen the level of significance that will cause us to reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>. Now we need to bring it all together by evaluating the evidence. 
+</para><para id="eip-84">There are four steps to evaluating the evidence: </para><list id="eip-265" list-type="enumerated" number-style="arabic"><item>Choose an appropriate model (or distribution).</item>
+<item>Find the test statistic.</item>
+<item>Calculate the <emphasis effect="italics">p</emphasis>-value</item>
+<item>Compare the <emphasis effect="italics">p</emphasis>-value to the level of significance to decide whether to reject the null hypothesis or not. </item></list><section id="eip-535"><title>Choose an appropriate model (or distribution)</title><para id="eip-37">First things first, to evaluate the evidence we will do so by determining the <emphasis>probability</emphasis> that we observed our sample data (or even better evidence against the null hypothesis) assuming the null hypothesis is true. We will then determine whether this probability suggests that the sample data is unlikely to occur under the assumption (that the null hypothesis is true). To find a probability, we want to use a distribution (e.g. standard normal distribution, binomial distribution), which we also call a model. Thus, the first step of evaluating evidence is determining what probability model or distribution we will use to find the probability. To do this, we have to consider what kind of data we are examining (e.g. categorical or quantitative) and whether the data satisfies the conditions of the distribution. 
+</para><para id="eip-485">For example, suppose we are examining whether people, on average, sleep less than 8 hours a day. To investigate this situation, we would collect data on how many hours a person sleeps. Therefore, our data would be continuous and quantitative. Further, we want to notice that we are comparing a sample mean to hypothesized population mean (i.e. 8 hours of sleep). So we are not comparing individual sleep hours, but instead comparing means. Therefore, we want to use the <emphasis>sampling distribution of sample means</emphasis>. For continuous data, we the only distribution we know is the normal distribution. Therefore, we would need to determine whether it would be appropriate to assume the sampling distribution of sample means is normal (Hint: You'll probably have to refer to the central limit theorem in some way). </para></section><section id="eip-525"><title>Find the test statistic</title><para id="eip-195">The test statistic is a statistic that needs to be found to find the probability. For example, suppose we know that the sampling distribution of sample means is normally distributed, to evaluate our sample data we would need to calculate the z-score using the formula: (sample mean - hypothesized mean)/(standard deviation of the sample means). The value that we get from this calculation is the test statistic. The test statistic is an example of a random variable. 
+</para><para id="eip-935">Usually the test statistic is found by comparing the sample statistic with the hypothesized population parameter while taking into account variation. The comparison of the statistic and parameter is usually done by subtraction, while the consideration of variation is usually done through division. </para></section><section id="eip-137"><title>Find the <emphasis effect="italics">p</emphasis>-value</title><para id="eip-983">We are finally getting there! The <emphasis effect="italics">p</emphasis>-value is defined as <emphasis> the probability we will observe our sample statistic (or even better evidence against the null hypothesis), assuming the null hypothesis is true</emphasis>. Here are a few points about the p-value: 
+</para><list id="eip-673"><item>The <emphasis>smaller</emphasis> the <emphasis effect="italics">p</emphasis>-value, the <emphasis>more unlikely </emphasis> it is that we observed the evidence under the assumption the null hypothesis.</item>
+<item>The <emphasis effect="italics">p</emphasis>-value is a conditional probability, with the condition always being the assumption the null hypothesis is true.</item>
+<item>Finding the <emphasis effect="italics">p</emphasis>-value always includes an inequality due to the "even better evidence" portion. For example, if our sample mean number of hours of sleep was 7.5 hours, then we would find the probability that people get 7.5 hours <emphasis> or less</emphasis> (assuming the population mean is 8 hours of sleep) because getting less than 7.5 hours sleep (e.g. 7.4, 7, 6.2 hours) is even better evidence against the assumption that people get 8 hours of sleep, on average, per night. </item></list><para id="eip-950">The <emphasis effect="italics">p</emphasis>-value is found by using the test statistic and the distribution (or model). For example, suppose that the sampling distribution of sample means for the mean number of hours of sleep is normally distributed. Then the test statistic is the <emphasis effect="italics">z</emphasis>-score. Suppose, the test statistic for the mean number of hours of sleep per night is -2.5, then we would determine the <emphasis effect="italics">p</emphasis>-value by finding P(Z* <m:math>
+<m:apply><m:lt/><m:ci/><m:ci/></m:apply>
+</m:math>-.25) using the standard normal distribution, which is 0.0062=0.62%. </para><para id="eip-811">Below, we will look at some of the common misconceptions about the p-value. </para></section><section id="eip-352"><title>Compare the <emphasis effect="italics">p</emphasis>-value to the level of significance</title><para id="eip-187">As we have already stated, The smaller the <emphasis effect="italics">p</emphasis>-value, the more unlikely  it is that we observed the evidence under the assumption the null hypothesis.. The threshold between "small enough", or when we determine that the sample data is unlikely to occur under the assumption, is determined by the level of significance, <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>. Therefore, we make our decision as follows: 
+</para><list id="eip-252"><item>If <m:math>
+<m:apply><m:lt/><m:ci>p</m:ci><m:ci>α</m:ci></m:apply>
+</m:math>, we reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>.</item>
+<item>If <m:math>
+<m:apply><m:geq/><m:ci>p</m:ci><m:ci>α</m:ci></m:apply>
+</m:math>, we do not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>.</item>
+</list><para id="eip-184">What's amazing is that this general rule applies to all hypothesis tests that use the <emphasis effect="italics">p</emphasis>-value to make a decision.</para><para id="eip-985">Below, we'll discuss more about what "do not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>" means and what it does not mean.</para></section><section id="eip-100"><title>Make a conclusion</title><para id="eip-710">
+As the last step, we write a sentence that summarizes the results by making a statement about the <emphasis>alternative hypothesis</emphasis>. For example, for the number of hours of sleep research, we would either conclude that there is enough evidence or not enough evidence to suggest that people sleep, on average for less than 8 hours per night. 
+</para><note id="eip-767" type="important">Conclusions in hypothesis tests are never 100% true or false as we are making an inference about a population from a sample. Therefore, it is always possible that it an error has been made. Hence, it is NEVER appropriate to say that the alternative hypothesis is 100% true or to say that the hypothesis test proved something. Instead, we can only say whether the evidence supports the alternative hypothesis or not. We will discuss errors in hypothesis testing below. </note></section></section><section id="eip-198"><title>Common misconceptions about the <emphasis effect="italics">p</emphasis>-value</title><para id="eip-503">The <emphasis effect="italics">p</emphasis>-value is the most commonly used way that researchers evaluate evidence, but it is also poorly understood and many people (including people who use it) don't know what it means. This led to the American Statistical Association releasing a statement on p-values in an attempt to address the common errors. You can find the article here: <link url="https://www.tandfonline.com/doi/full/10.1080/00031305.2016.1154108" window="new">https://www.tandfonline.com/doi/full/10.1080/00031305.2016.1154108</link>. Here are some common misconceptions:
+</para><para id="eip-541"><title>Misconception: The <emphasis effect="italics">p</emphasis>-value is the probability the null hypothesis is true.</title>Think back to the definition of the <emphasis effect="italics">p</emphasis>-value. It is a probability that determines how (un)likely it is that we observed our sample statistic (or even better evidence against the null hypothesis) assuming the null hypothesis is true. Thus, it is a conditional probability that evaluates the sample data (as summarized by a statistic) in comparison to an assumption. It does NOT measure the likelihood of the null hypothesis being true.</para><para id="eip-344"><title>Misconception: The <emphasis effect="italics">p</emphasis>-value measures the probability the sample data by random chance</title>Again, this is untrue if we consider the definition of the <emphasis effect="italics">p</emphasis>-value. It is a conditional probability (which is missed in the misconception) and it misses the "or even better evidence" portion of the <emphasis effect="italics">p</emphasis>-value. </para><para id="eip-635"><title>Misconception: The smaller the <emphasis effect="italics">p</emphasis>-value the more significant the result</title>This is actually one of the limitations of the <emphasis effect="italics">p</emphasis>-value. The <emphasis effect="italics">p</emphasis>-value only determines if there is a statistically significant difference between the sample statistic and the assumed population parameter. It does not determine how big the difference is. Thus, the <emphasis effect="italics">p</emphasis>-value only tells you that, for example, the mean number of hours of sleep that people get per night is less than 8. But it does not indicate how much less than 8 it is. Even if your <emphasis effect="italics">p</emphasis>-value is very small, it does not make this indication. Like we saw with descriptive statistics, no one measure will tell you everything you need to know about the situation. Therefore, to fully investigate a hypothesis you need to consider more than just a <emphasis effect="italics">p</emphasis>-value. We'll learn about confidence intervals in the next chapter, which are an additional way to investigate a hypothesis. Another way to investigate significance of the results are effect sizes, which are beyond the scope of this course. </para></section><section id="eip-209"><title>What does "do not reject the null hypothesis" mean?</title><para id="eip-888">Suppose our <emphasis effect="italics">p</emphasis>-value is 23%. As our level of significance can only be between 1% and 10%, regardless of our choice of level of significance, the <emphasis effect="italics">p</emphasis>-value is greater than the level of significance. This means there is not enough evidence to make us question our assumption. Therefore, we do not reject the null hypothesis. But what does this mean? It actually means very little. When we say "do not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>", all we are saying is there is not enough evidence to support the alternative hypothesis. It says nothing about the truth of the null hypothesis! Therefore, saying "do not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>" does not mean "accept <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+" as it only tells us that we don't have enough evidence to support <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math> (which is really not telling us much) and it is telling nothing about <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>. Therefore, this decision is telling us very little. 
+
+</para><section id="eip-869"><title>Why does do not reject null hypothesis NOT mean accept the null hypothesis?</title><para id="eip-868">There are various ways to explain this. Here are three of them. 
+
+
+</para><para id="eip-901">Before we look at them, it is important to remember that <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ and <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math> are opposites of each other. Therefore, if <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ is shown to be false, <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math> would then be true, and vice versa.</para><para id="eip-660"><title>Analogy: Murder trial</title>In a murder trial, the jury start with the assumption of innocence. If they reject this assumption, they conclude the defendant is guilty. But if they do not reject this assumption, they conclude the defendant is not guilty. Notice, they do not conclude the defendant is innocent. This is because the trial is only examining whether they are guilty or not. It is not examining their innocence. A "not guilty" verdict does not mean the defendant is innocent. It only means there is not enough evidence to show the defendant is guilty. These are two very different things. In a similar manner in hypothesis testing, the decision to "not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>" only means there is not enough evidence to suggest the alternative hypothesis is correct. It says nothing about the null hypothesis. </para><para id="eip-722"><title>Informal fallacy</title>Suppose we do not reject the null hypothesis and we used that to conclude that there is evidence for the null hypothesis. Then we would have committed the informal fallacy (or made a bad argument) called <emphasis> arguing from ignorance </emphasis>. The informal fallacy of arguing from ignorance is when we arrive at a conclusion because there is a lack of evidence to the contrary. We say X is true because there is not enough evidence to say it is false OR we say X is false because there is not enough evidence to say it is true. For example, the argument "there is no evidence that aliens exist means that aliens do not exist" is an argument from ignorance as we are saying the absence of evidence of aliens conclusively means there are no aliens. It does not allow that we simply haven't found the evidence yet. </para><para id="eip-818">How does this relate to "do not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>"? If we used this conclusion to determine that there is evidence for <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math> (i.e. we say accept <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+)
+, then we would be making an argument from ignorance. In particular, the argument would be "since there is not enough evidence for <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>, then <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math> must be false." Since <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+ and <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math> are opposites, this would mean that we would conclude accept <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>. But this would be an argument from ignorance as we are saying an absence of evidence for <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+ is evidence for <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>. Thus, we are not allowing that we simply haven't found the evidence yet (or that we might not ever find it). 
+
+
+
+</para><para id="eip-904">In summary, "do not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>" does not mean "evidence for <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>" as doing so would be an argument from ignorance (or saying that an absence of evidence for X, means X is false and not X is true). </para><para id="eip-552"><title>Formal logic</title>Two things: 1) If you do not know formal logic, ignore this section; 2) Hypothesis testing does not follow formal logic as there is no certainty in hypothesis testing but there is certainty in formal logic. Therefore, this is section should be read with the warning of remembering that nothing is 100% true in hypothesis testing. This is why you'll see "true" and "false" in the explanation below as the quotations indicate that we aren't discussing Truth but rather whether the evidence suggests something is true. </para><para id="eip-387">In formal logic, our null hypothesis can be written as a conditional statement: If P then Q. In particular, P is the statement the null hypothesis is true (or equivalently, our parameter equals some number X) and Q is the statement the sample data would support the null hypothesis (i.e. the relevant statistic would be close to the number X). That is, it is the statement: "If the null hypothesis is true, then we expect the sample data would support the null hypothesis". When performing a hypothesis test, this whole statement is considered to be true.</para><para id="eip-219">The truth table for the conditional statement is as follows: </para><table id="eip-880" summary="Truth table for conditional statement">
+<tgroup cols="3"><tbody>
+  <row>
+    <entry>P</entry>
+    <entry>Q</entry>
+    <entry>If P, then Q.</entry>
+  </row>
+  <row>
+    <entry>T</entry>
+    <entry>T</entry>
+    <entry>T</entry>
+  </row>
+  <row>
+    <entry>T</entry>
+    <entry> F</entry>
+    <entry>F</entry>
+  </row>
+  <row>
+    <entry>F</entry>
+    <entry>T</entry>
+    <entry>T</entry>
+  </row>
+  <row>
+    <entry>F</entry>
+    <entry>F</entry>
+    <entry>T</entry>
+  </row>
+</tbody>
+
+</tgroup>
+</table><para id="eip-48">As the whole conditional statement is true, the situation where P is true and Q is false is not possible in this scenario (i.e. the second row does not apply to hypothesis testing). Therefore, only rows 1, 3 and 4 are possible. </para><para id="eip-155"><title>Situation: Reject <m:math> <m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci> </m:math></title>Suppose we gather our evidence and our statistic is nowhere near X (i.e. our <emphasis effect="italics">p</emphasis>-value is small), then the statement "the sample data supports the null hypothesis" would be "false". Looking at rows 1, 3 and 4 on the truth table, then the only situation where Q is false is in the fourth row. This means, that P would also have to be false. In other words, if we reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>, then the evidence suggests that <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ is false and we can conclude (since <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ and <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math> are opposites of each other) that the evidence supports <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>.
+
+</para><para id="eip-81"><title>Situation: Do not reject <m:math> <m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci> </m:math></title>Suppose we gather our evidence and our statistic is near X (i.e. our <emphasis effect="italics">p</emphasis>-value is large), then the statement "the sample data supports the null hypothesis" would be "true". Looking at rows 1, 3 and 4 on the truth table, then when Q is true, P could be either true (first row) or false (third row). This means, we do not know if P is true or false. In other words, if we do not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>, then we cannot make any conclusion about <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math> as it could be either true or false and we don't know which one!</para><para id="eip-792">In short, if we reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+, we can conclude that <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ is likely false and therefore, <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math> is likely true (i.e. there is evidence to support <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>). But if we do not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>, then <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math> could be either true or false. We simply do not know. Therefore, we cannot make any real conclusion. The best we can say is that there is not enough evidence to support <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>, which is not really saying anything. 
+
+
+</para><para id="eip-443"><title>Summary</title>Above, three different ways of explaining why do not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ does NOT mean that <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math> is likely true were provided. The informal fallacy reasoning is the most accurate to the situation we are in as the analogy is simply an analogy (not a true reason) and formal logic does not entirely apply to this situation as hypothesis testing does not deal in certainties. The important part to gain from these explanations is the idea that do not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ is NOT the same thing as accepting <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+. Further, it is INCORRECT in hypothesis testing to state "accept <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+". </para></section><example id="eip-973"><title>What accept <m:math> <m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci> </m:math> looks like</title><para id="eip-789">
+  Suppose for the average number of hours of sleep example, we concluded "do not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+". The correct conclusion would be "there is not sufficient evidence to suggest that, on average, people get less than 8 hours of sleep". That is, we are saying there is not enough evidence to support <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>, but we are saying nothing about <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+. 
+
+</para>
+<para id="eip-idm1319843648">
+It would be INCORRECT to state: "there is sufficient evidence to suggest that, on average, people are getting at least 8 hours of sleep," as this statement is equivalent to accepting <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ or of stating that the null hypothesis is likely true. If you wrote your conclusion this way, you would be committing an informal fallacy of arguing from ignorance.
+</para></example><note id="eip-332"><title>Try It</title><exercise id="eip-idm1587307184">
+<problem id="eip-18">
+  <para id="eip-139">
+   We want to test whether the mean GPA of students in Canadian universities is different from 2.0 (out of 4.0). The null and alternative hypotheses are:
+<newline/><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">μ</emphasis> = 2.0
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">μ</emphasis> ≠ 2.0 
+  </para>
+<para id="eip-idm1701068816"> Write the conclusion if a) we reject the null hypothesis and b) if we do not reject the null hypothesis. Finally, write the incorrect conclusion of c) accepting the null hypothesis. </para>
+</problem>
+
+<solution id="eip-969">
+  <para id="eip-75">
+    a) There is sufficient evidence to suggest that the mean GPA of students in Canadian universities is different from 2.0 (out of 4.0).
+<newline/>b) There is not sufficient evidence to suggest that the mean GPA of students in Canadian universities is different from 2.0 (out of 4.0).
+<newline/> c) There is sufficient evidence to suggest that the mean GPA of students in Canadian universities is 2.0 (out of 4.0). (NOTE: REMEMBER THIS IS INCORRECT!!!)
+  </para>
+</solution>
+</exercise>
+</note><section id="eip-114"><title>What if we want to investigate the null hypothesis?</title><para id="eip-270">When we are doing research, sometimes we want to determine if nothing has changed or if two things are the same (i.e. we want to investigate the null hypothesis). For example, suppose we want to show that feeding babies mushy food or whole food makes makes no difference on instances of choking. We can investigate this situation using inferential statistics, but it would not be appropriate to do so using a hypothesis test. This highlights a limitation of null hypothesis significance tests: they do not let us investigate situations where we want to show two (or more) things are the same. Instead we have to use other inferential techniques such as confidence intervals. 
+</para></section></section><section id="eip-175"><title>Type I and II errors</title><para id="eip-575">As mentioned previously, hypothesis testing never results in a 100% conclusion about the truth or falseness of the alternative hypothesis. Rather, as we are using sample data to make a conclusion about a population parameter, there is always the possibility of error. 
+</para><para id="eip-309"><title>Analogy: Murder trial</title>In a murder trial, the jurors do their best job, based on the evidence, to arrive at their decision of guilty (reject null hypothesis) or not guilty (do not reject null hypothesis). But sometimes they make mistakes. That is, sometimes their verdict is not guilty, when in fact the person is guilty OR their verdict is guilty, when in fact the person is innocent. The jurors do not intentionally make this err (we hope) but instead the evidence they were presented with leads them down the wrong path. Further, after the trial is over, they don't know if there decision was right or wrong. </para><para id="eip-608">Similarly in hypothesis testing, we can make a wrong decision not because we intend to but because our sample data (evidence) led us down the wrong path. When you perform a hypothesis test, there are actually four possible outcomes depending on the actual truth (or falseness) of the null hypothesis <emphasis effect="italics">H<sub>0</sub></emphasis> and the decision to reject or not. The outcomes are summarized in the following table:
+</para><table id="eip-393" summary="Table of four possible outcomes">
+<tgroup cols="3"><colspec colnum="1" colname="c1"/>
+    <colspec colnum="2" colname="c2"/>
+    <colspec colnum="3" colname="c3"/>
+<thead>
+<row>
+    <entry>STATISTICAL DECISION</entry>
+    
+    <entry namest="c2" nameend="c3"><emphasis effect="italics">H<sub>0</sub></emphasis> IS ACTUALLY...</entry>
+    
+    
+  </row>
+</thead>
+
+<tbody>
+
+  <row>
+    <entry/>
+    <entry>True</entry>
+    <entry>False</entry>
+  </row>
+
+
+
+  <row>
+    <entry><emphasis>Do not reject <emphasis effect="italics">H<sub>0</sub></emphasis></emphasis></entry>
+    <entry>Correct Outcome</entry>
+    <entry>Type II error</entry>
+  </row>
+  <row>
+    <entry><emphasis>Reject <emphasis effect="italics">H<sub>0</sub></emphasis></emphasis></entry>
+    <entry>Type I Error</entry>
+    <entry>Correct Outcome</entry>
+  </row>
+</tbody>
+
+
+</tgroup>
+</table><para id="eip-664">The four possible outcomes in the table are:
+    <list id="list-1" list-type="enumerated"><item>The decision is <emphasis>do not reject <emphasis effect="italics">H<sub>0</sub></emphasis></emphasis> when <emphasis><emphasis effect="italics">H<sub>0</sub></emphasis> is true (correct decision).</emphasis></item>
+      
+      <item>The decision is <emphasis>reject <emphasis effect="italics">H<sub>0</sub></emphasis></emphasis> when <emphasis><emphasis effect="italics">H<sub>0</sub></emphasis> is true</emphasis> (incorrect decision known as a <term>Type I error</term>). This case is described as "rejecting a good null" or a "false positive". </item>
+      
+      <item>The decision is <emphasis>do not reject <emphasis effect="italics">H<sub>0</sub></emphasis></emphasis> when, in fact, <emphasis><emphasis effect="italics">H<sub>0</sub></emphasis> is false</emphasis> (incorrect decision known as a <term>Type II error</term>). This is called "accepting a false null" or a "false negative". </item>
+      
+      <item>The decision is <emphasis>reject <emphasis effect="italics">H<sub>0</sub></emphasis></emphasis> when <emphasis><emphasis effect="italics">H<sub>0</sub></emphasis> is false</emphasis> (<emphasis>correct decision</emphasis>).</item>
+    </list></para><para id="eip-965">Each of the errors occurs with a particular probability. The Greek letters <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+ and <m:math>
+<m:apply><m:lt/><m:ci>β</m:ci></m:apply>
+</m:math> represent the probabilities.</para><list id="eip-378"><item><m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+ = probability of a Type I error = <emphasis><emphasis effect="italics">P</emphasis>(Type I error)</emphasis> = probability of rejecting the null hypothesis when the null hypothesis is true. This is called the level of significance!</item>
+<item><m:math>
+<m:apply><m:lt/><m:ci>β</m:ci></m:apply>
+</m:math>
+ = probability of a Type II error = <emphasis><emphasis effect="italics">P</emphasis>(Type II error)</emphasis> = probability of not rejecting the null hypothesis when the null hypothesis is false. The probability of 1- <m:math>
+<m:apply><m:lt/><m:ci>β</m:ci></m:apply>
+</m:math>
+ is called the "power of the test". </item>
+</list><para id="eip-134">As <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+ and <m:math>
+<m:apply><m:lt/><m:ci>β</m:ci></m:apply>
+</m:math> represent the probabilities of committing errors, they should be as small as possible. </para><note id="eip-830"><title>Relationship between <m:math> <m:apply><m:lt/><m:ci>α</m:ci></m:apply> </m:math> and <m:math> <m:apply><m:lt/><m:ci>β</m:ci></m:apply> </m:math></title>The probability of committing a specific error is related to each other and the sample size effects both probabilities. </note><list id="eip-111"><item>For any fixed <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+, an increase in the sample size will cause a 
+decrease in <m:math>
+<m:apply><m:lt/><m:ci>β</m:ci></m:apply>
+</m:math>
+.</item>
+<item>For any fixed sample size, a decrease in <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+ will cause an 
+increase in <m:math>
+<m:apply><m:lt/><m:ci>β</m:ci></m:apply>
+</m:math>
+.</item>
+<item>To decrease both <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+ and <m:math>
+<m:apply><m:lt/><m:ci>β</m:ci></m:apply>
+</m:math>
+ increase the sample size.</item>
+<item> <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+and <m:math>
+<m:apply><m:lt/><m:ci>β</m:ci></m:apply>
+</m:math> are inversely proportional to each other. In other words, if you make <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+ very small, then <m:math>
+<m:apply><m:lt/><m:ci>β</m:ci></m:apply>
+</m:math>
+will be very big. </item>
+</list><para id="eip-291">This last point is very important when you are considering your choice for <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>, the level of significance. If you make <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+ very small (say 0.00001%), then the probability of committing a type I error will be very small. But the probability of committing at type II error will be very high! This is why the level of significance is usually chosen to be between 1% and 10%. We don't want it to be smaller than 1% as that would cause the probability of a type II error to be too high and we don't want it larger than 10% as the probability of a type I error would be too high. Instead we try to balance the probabilities. </para><section id="eip-311"><title>Considerations when choosing the level of significance</title><para id="import-auto-idm1043014128">Once you have set out your null and alternative hypothesis, you need to determine how strong your sample data must be before you would be confident in rejecting the null hypothesis in favour of the alternative hypothesis. The required strength of evidence is defined by the level of significance (<m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+).</para>
+        <para id="import-auto-idm1565638288">Typically values for alpha range from 1% to 10% and will vary depending on a number of factors, including conventions set by a particular industry or discipline and the relative risks of a Type I versus a Type II error. In many cases, the choice of alpha may be left up to the analyst. Unfortunately, without a peer review process, some analysts may be tempted to set alpha in a way that will support his or her desired conclusion. </para>
+        <para id="import-auto-idm1140870960">For example, if a pharmaceutical company stands to make millions of dollars on a new drug, it obviously has a vested interest in offering <emphasis effect="italics">proof </emphasis>that the drug is effective. The null hypothesis is that the drug is not effective; and the alternative is that it is. But what if the proof, as discovered by several rounds of double-blind tests, turns out to be rather weak? This would normally lead the researcher to decide not to reject the null hypothesis and conclude that the sample evidence is insufficiently strong for the drug to be considered a success. If this were the conclusion, the drug should not be approved as an effective treatment. But a company with millions already invested in the drug may be strongly determined to see it to market, in spite of the test results. An unethical approach might be to simply move the <emphasis effect="italics">goal posts</emphasis> to make it easier to reject the null hypothesis (i.e. to make the evidence needed to reject the null hypothesis weaker). </para>
+        <para id="import-auto-idm1081293072">These <emphasis effect="italics">goal posts</emphasis>, of course, are defined by the level of significance. In much scientific testing, the level of significance is typically set at 1%, which means the sample evidence must be very strong before a null hypothesis can be rejected. But in this example, the pharmaceutical company may move "the goal posts", which would mean setting the level of significance as high as 10%. This higher level of significance allows for weaker evidence to be used in support of an alternative hypothesis.</para>
+       
+        <para id="eip-idm655168736">Thankfully, at least when it comes to pharmaceutical testing, there are objective, government regulated standards that cannot be easily manipulated by vested interests. However, there are instances where the researcher is in control of choosing the level of significance. When this is the case, the choice should be made ethically and with an honest consideration of the implications of Type I and Type II errors. </para>
+        <para id="import-auto-idm282226640">As a final note, the level of significance should never be chosen <emphasis effect="italics">after</emphasis> the sample data has been collected and summarized. This would be akin to allowing the home team to determine where the goal posts are after the game has already begun!</para>
+      </section></section><example id="eip-316"><para id="element-742">Suppose the null hypothesis is: Frank's rock climbing equipment is safe. What would the type I and II errors and their associated probabilities be in this situation? Further, what would be an appropriate choice for the level of significance?</para><section id="eip-112"><title>Solution</title><para id="eip-idm726642416"><emphasis>Type I error</emphasis>: Frank thinks that his rock climbing equipment may not be safe when, in fact, it really is safe.</para><para id="eip-455"><emphasis>Type II error</emphasis>: Frank thinks that his rock climbing equipment may be safe when, in fact, it is not safe.
+</para><para id="eip-721"><m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+ = probability that Frank thinks his rock climbing equipment may not be safe when, in fact, it really is safe. 
+</para><para id="eip-582"><m:math>
+<m:apply><m:lt/><m:ci>β</m:ci></m:apply>
+</m:math>
+ = probability that Frank thinks his rock climbing equipment may be safe when, in fact, it is not safe.
+</para><para id="eip-426">Notice that, in this case, the error with the greater consequence is the Type II error. (If Frank thinks his rock climbing equipment is safe, he will go ahead and use it.) Therefore, we want to minimize a Type II error which, since they are inversely related, means that we want to maximize a Type I error. This means that we would want to choose the level of significance to be <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+= 10%. </para></section><note id="eip-179"><label/><title>Try It</title>
+     
+    <exercise id="eip-808">
+    <problem id="eip-569">
+  <para id="eip-681">Suppose the null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, is: the blood cultures contain no traces of pathogen <emphasis effect="italics">X</emphasis>. State the Type I and Type II errors.</para>
+</problem>
+
+<solution id="eip-498">
+  <para id="eip-946">Type I error: The researcher thinks the blood cultures do contain traces of pathogen <emphasis effect="italics">X</emphasis>, when in fact, they do not.</para>
+<para id="eip-idm8480688">Type II error: The researcher thinks the blood cultures do not contain traces of pathogen <emphasis effect="italics">X</emphasis>, when in fact, they do.</para>
+
+</solution>
+  </exercise></note><note id="eip-453"><label/><title>Try It</title>
+     
+    <exercise id="eip-idm198087504">
+    <problem id="eip-idm1180640864">
+  <para id="eip-idm171787216">Suppose the null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, is: The victim of an automobile accident is alive when he arrives at the emergency room of a hospital. State the Type I and Type II errors. Further, determine an appropriate level of significance</para>
+</problem>
+
+<solution id="eip-idm1233289440">
+  <para id="eip-idm217464688"><emphasis>Type I error</emphasis>: The emergency crew thinks that the victim is dead when, in fact, the victim is alive. </para> <para id="eip-idm1115451744"><emphasis>Type II error</emphasis>: The emergency crew does not know if the victim is alive when, in fact, the victim is dead.</para><para id="eip-idm1107755664"> The error with the greater consequence is the Type I error. (If the emergency crew thinks the victim is dead, they will not treat him.) Therefore, we want to minimize a Type I error and, thus, we choose the level of significance to be small, i.e. <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+ = 1%.</para>
+
+</solution>
+  </exercise></note><note id="eip-692"><label/><title>Try It</title>
+     
+    <exercise id="eip-idm708904112">
+    <problem id="eip-idm314953136">
+  <para id="eip-idm947439760">It’s a Boy Genetic Labs claim to be able to increase the likelihood that a pregnancy will result in a boy being born. Statisticians want to test the claim. Suppose that the null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, is: It’s a Boy Genetic Labs has no effect on gender outcome. State the Type I and Type II errors. Further, determine an appropriate level of significance</para></problem>
+
+<solution id="eip-idm380028992">
+  <para id="eip-idm439116400"><emphasis>Type I error</emphasis>: This results when a true null hypothesis is rejected. In the context of this scenario, we would state that we believe that It’s a Boy Genetic Labs influences the gender outcome, when in fact it has no effect.</para>
+<para id="eip-idm405741664"><emphasis>Type II error</emphasis>: This results when we fail to reject a false null hypothesis. In context, we would state that It’s a Boy Genetic Labs does not influence the gender outcome of a pregnancy when, in fact, it does. </para>
+<para id="eip-idm710204176">The error of greater consequence would be the Type I error since couples would use the It’s a Boy Genetic Labs product in hopes of increasing the chances of having a boy. Therefore, we want to minimize a Type I error and, thus, we choose the level of significance to be small, i.e. <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+ = 1%.</para>
+
+</solution>
+  </exercise></note><note id="eip-709"><label/><title>Try It</title>
+    
+    <para id="eip-idm984937680">Determine both Type I and Type II errors for the following scenario:</para>
+<para id="eip-idp26159712">Assume a null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, that states the percentage of adults with jobs is at least 88%.</para>
+    
+    <exercise id="eip-idm1014272752">
+      <problem id="eip-idm1041204864">
+<para id="eip-idm392048688">Assume a null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, that states the percentage of adults with jobs is at least 88%.</para>
+        <para id="eip-idm954618336">Identify the Type I and Type II errors from these four statements.
+          <list id="eip-idm170151664" list-type="enumerated" number-style="lower-alpha">
+  <item>Not to reject the null hypothesis that the percentage of adults who have jobs is at least 88% when that percentage is actually less than 88%</item>
+<item>Not to reject the null hypothesis that the percentage of adults who have jobs is at least 88% when the percentage is actually at least 88%.</item>
+<item>Reject the null hypothesis that the percentage of adults who have jobs is at least 88% when the percentage is actually at least 88%.</item>
+<item>Reject the null hypothesis that the percentage of adults who have jobs is at least 88% when that percentage is actually less than 88%.
+</item>
+</list>
+</para>
+</problem>
+
+<solution id="eip-idm369829328">
+
+  <para id="eip-idm1299523568">Type I error: c</para>
+  <para id="eip-idm1792417936">Type I error: b</para>
+
+</solution>
+    </exercise>
+  
+  </note></example><section id="eip-370"><title>Homework</title><exercise id="eip-470"><problem id="eip-512">
+<para id="eip-102">In a population of fish in a lake used to be that 42% were female. Then an oil spill in the lake happened. A test is conducted to see if, in fact, the proportion is now less. State the null and alternative hypotheses.</para></problem>
+
+<solution id="eip-217">
+<para id="eip-161">
+<list id="eip-idm74385712" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ = 0.42</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ &lt; 0.42</item>
+</list></para>
+</solution>
+
+</exercise><exercise id="eip-192"><problem id="id13907062">
+<para id="eip-idm29584912">A random survey of 75 death row inmates in the U.S. revealed that the mean length of time on death row is 17.4 years with a standard deviation of 6.3 years. If you were conducting a hypothesis test to determine if the population mean time on death row is likely different from 15 years, what would the null and alternative hypotheses be?</para><list id="list-92369" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: __________</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: __________</item>
+</list></problem>
+
+<solution id="id13907281">
+<list id="list-8927365476" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">μ</emphasis> = 15</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">μ</emphasis> ≠ 15</item>
+</list>
+</solution>
+
+</exercise><exercise id="eip-59"><problem id="id8382572">
+<para id="element-802">Some of the following statements refer to the null hypothesis, some to the alternate hypothesis.
+</para><para id="element-449">State the null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, and the alternative hypothesis. <emphasis effect="italics">H<sub>a</sub></emphasis>, in terms of the appropriate parameter (<emphasis effect="italics">μ</emphasis> or <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>).</para><list id="element-222" list-type="enumerated" number-style="lower-alpha"><item>The mean number of years Canadians work before retiring is 34.</item>
+<item>At most 60% of Canadians vote in federal elections.</item>
+<item>The mean starting salary for McGill University graduates is at least $100,000 per year.</item>
+<item>Twenty-nine percent of high school seniors get drunk each month.</item>
+<item>Fewer than 5% of adults ride the bus to work in Calgary.</item>
+<item>The mean number of cars a person owns in her lifetime is not more than ten.</item>
+<item>About half of Canadians prefer to live away from cities, given the choice.</item>
+<item>Europeans have a mean paid vacation each year of six weeks.</item>
+<item>The chance of developing breast cancer is under 11% for women.</item>
+<item>Private universities' mean tuition cost is more than $20,000 per year.</item>
+</list></problem>
+
+<solution id="id9205906">
+<list id="fs-idm3759984" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">μ</emphasis> = 34; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">μ</emphasis> ≠ 34</item>
+
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ ≤ 0.60; <emphasis effect="italics">H<sub>a</sub></emphasis>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ &gt; 0.60</item>
+
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">μ</emphasis> ≥ 100,000; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">μ</emphasis> &lt; 100,000</item>
+
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ = 0.29; <emphasis effect="italics">H<sub>a</sub></emphasis>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ ≠ 0.29</item>
+
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ = 0.05; <emphasis effect="italics">H<sub>a</sub></emphasis>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ &lt; 0.05</item>
+
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">μ</emphasis> ≤ 10; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">μ</emphasis> &gt; 10</item>
+
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ = 0.50; <emphasis effect="italics">H<sub>a</sub></emphasis>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ ≠ 0.50</item>
+
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">μ</emphasis> = 6; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">μ</emphasis> ≠ 6</item>
+
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ ≥ 0.11; <emphasis effect="italics">H<sub>a</sub></emphasis>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ &lt; 0.11</item>
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">μ</emphasis> ≤ 20,000; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">μ</emphasis> &gt; 20,000</item>
+</list></solution>
+
+</exercise><exercise id="eip-708"><problem id="eip-236">
+  <para id="eip-374">
+    For exercises a-d above, write the conclusions if a) we reject the null hypothesis, b) we do not reject the null hypothesis, and c) we INCORRECTLY accept the null hypothesis. 
+  </para>
+</problem>
+
+<solution id="eip-240">
+  <para id="eip-79"><list id="eip-idm1749706880" list-type="enumerated" number-style="lower-alpha"><item>
+a) There is sufficient evidence to suggest that the  mean number of years Americans work before retiring is different 34.
+<newline/>b) There is not sufficient evidence to suggest that the  mean number of years Americans work before retiring is different 34.
+<newline/> c) There is sufficient evidence to suggest that the  mean number of years Americans work before retiring is 34.(NOTE: REMEMBER THIS IS INCORRECT!!!)
+</item>
+      <item>
+a) There is sufficient evidence to suggest that more than 60% of Americans vote in presidential elections.
+<newline/>b) There is not sufficient evidence to suggest that more than 60% of Americans vote in presidential elections.
+<newline/> c) There is sufficient evidence to suggest that at most 60% of Americans vote in presidential elections.(NOTE: REMEMBER THIS IS INCORRECT!!!)</item>
+      <item>
+
+a) There is sufficient evidence to suggest that the percentage of high school seniors who get drunk each month is different from 29%.
+<newline/>b) There is not sufficient evidence to suggest that the percentage of high school seniors who get drunk each month is different from 29%.
+<newline/> c) There is sufficient evidence to suggest that twenty-nine percent of high school seniors get drunk each month.(NOTE: REMEMBER THIS IS INCORRECT!!!)</item>
+      
+
+<item>a) There is sufficient evidence to suggest that fewer than 5% of adults ride the bus to work in Los Angeles.
+<newline/>b) There is not sufficient evidence to suggest that fewer than 5% of adults ride the bus to work in Los Angeles.
+<newline/> c) There is sufficient evidence to suggest that at least 5% of adults ride the bus to work in Los Angeles.(NOTE: REMEMBER THIS IS INCORRECT!!!)</item>
+
+</list></para></solution>
+</exercise><exercise id="eip-738"><problem id="id8184432"> 
+<para id="eip-idp133963488">A statistics instructor believes that fewer than 20% of Evergreen Valley College (EVC) students attended the opening night midnight showing of the latest Harry Potter movie. She surveys 84 of her students and finds that 11 attended the midnight showing. An appropriate alternative hypothesis is:</para><list id="id8618736" list-type="enumerated" number-style="lower-alpha"><item><m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ = 0.20</item>
+<item><m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ &gt; 0.20</item>
+<item><m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ &lt; 0.20</item>
+<item><m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+ ≤ 0.20</item>
+</list></problem>
+<solution id="id8184727"><para id="paragrams">c</para>
+</solution>
+
+</exercise><exercise id="eip-idm505187888">
+<problem id="id8384344">
+  <para id="element-281">State the Type I and Type II errors in complete sentences given the following statements.</para>
+    <list id="fs-idm56908224" list-type="enumerated" number-style="lower-alpha"><item>The mean number of years Americans work before retiring is 34.</item>
+      <item>At most 60% of Americans vote in presidential elections.</item>
+      <item>The mean starting salary for San Jose State University graduates is at least $100,000 per year.</item>
+      <item>Twenty-nine percent of high school seniors get drunk each month.</item>
+      <item>Fewer than 5% of adults ride the bus to work in Los Angeles.</item>
+      <item>The mean number of cars a person owns in his or her lifetime is not more than ten.</item>
+      <item>About half of Americans prefer to live away from cities, given the choice.</item>
+      <item>Europeans have a mean paid vacation each year of six weeks.</item>
+      <item>The chance of developing breast cancer is under 11% for women.</item>
+   
+    </list></problem>
+
+<solution id="eip-idm137925328">
+  <list id="fs-idm18858336" list-type="enumerated" number-style="lower-alpha"><item>Type I error: We conclude that the mean is not 34 years, when it really is 34 years. Type II error: We do not conclude that the mean is not 34 years, when in fact it really is not 34 years.</item>
+      <item>Type I error: We conclude that more than 60% of Americans vote in presidential elections, when the actual percentage is at most 60%.Type II error: We do not conclude that more than 60% of Americans vote in presidential elections when, in fact, more than 60% do.</item>
+      <item>Type I error: We conclude that the mean starting salary is less than $100,000, when it really is at least $100,000. Type II error: We do not conclude that the mean starting salary is less than $100,000 when, in fact, it is less than $100,000.</item>
+      <item>Type I error: We conclude that the proportion of high school seniors who get drunk each month is not 29%, when it really is 29%. Type II error: We do not conclude that the proportion of high school seniors who get drunk each month is not 29% when, in fact, it is not 29%.</item>
+      <item>Type I error: We conclude that fewer than 5% of adults ride the bus to work in Los Angeles, when the percentage that do is really 5% or more. Type II error: We do not conclude that fewer than 5% of adults ride the bus to work in Los Angeles when, in fact, fewer that 5% do. </item>
+      <item>Type I error: We conclude that the mean number of cars a person owns in his or her lifetime is more than 10, when in reality it is not more than 10. Type II error: We do not conclude that the mean number of cars a person owns in his or her lifetime is more than 10 when, in fact, it is more than 10.</item>
+      <item>Type I error: We conclude that the proportion of Americans who prefer to live away from cities is not about half, though the actual proportion is about half. Type II error: We do not conclude that the proportion of Americans who prefer to live away from cities is not about half when, in fact, it is not half.</item>
+      <item>Type I error: We conclude that the duration of paid vacations each year for Europeans is not six weeks, when in fact it is six weeks. Type II error: We do not conclude that the duration of paid vacations each year for Europeans is not six weeks when, in fact, it is not.</item>
+      <item>Type I error: We conclude that the proportion is less than 11%, when it is really at least 11%. Type II error: We do not conclude that the proportion is less than 11%, when in fact it is less than 11%.</item>
+      
+  </list></solution>
+</exercise><exercise id="eip-56"><problem id="id8395653">
+  <para id="element-818">For statements a-i in <link target-id="element-612">the exercise above</link>, determine whether one error is of more consequence than the other or if both are equally bad. </para></problem>
+
+<solution id="eip-932">
+  <para id="eip-752">Note: There can be more than one answer to these questions as the consequence often depends on the context. 
+<list id="eip-idm167201248" list-type="enumerated" number-style="lower-alpha"><item>Both errors are equally bad</item>
+      <item>Both errors are equally bad. </item>
+      <item>A type I error would be bad for school recruiters, while a type II error would be bad for current students </item>
+      <item>Both errors are equally bad.</item>
+      <item>If you are campaigning for less bus funding, then a type I error would be bad. </item>
+      <item>Both errors are equally bad.</item>
+      <item>Both errors are equally bad.</item>
+      <item>Both errors are equally bad.</item>
+      <item>A type I error would be bad as it could result in a decrease in funding or screening when there shouldn't be. </item>
+      
+
+</list></para></solution>
+</exercise><exercise id="eip-531"><problem id="id9404374">
+<para id="id8618928">When a new drug is created, the pharmaceutical company must subject it to testing before receiving the necessary permission from the Food and Drug Administration (FDA) to market the drug. Suppose the null hypothesis is “the drug is unsafe.” What is the Type II Error?</para>
+  <list id="id5046364" list-type="enumerated" number-style="lower-alpha">
+    <item>To conclude the drug is safe when in, fact, it is unsafe.</item>
+    <item>Not to conclude the drug is safe when, in fact, it is safe.</item>
+    <item>To conclude the drug is safe when, in fact, it is safe.</item>
+    <item>Not to conclude the drug is unsafe when, in fact, it is unsafe.</item>
+  </list>
+</problem>
+<solution id="id9404499">
+<para id="paragraphs">b</para></solution>
+
+</exercise>
+</section><para id="delete_me">
+     <!-- Insert module text here -->
+  </para>
+</content>
+
+</document>

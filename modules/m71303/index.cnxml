@@ -1,0 +1,36 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+
+<title>Introduction to Hypothesis Testing</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m71303</md:content-id>
+  <md:title>Introduction to Hypothesis Testing</md:title>
+  <md:abstract>Introduction to chapter on hypothesis testing</md:abstract>
+  <md:uuid>2e4b8614-9780-4d2a-bc53-8f6993e85a6f</md:uuid>
+</metadata>
+
+<content>
+  <para id="delete_me"><title>Inferential statistics</title>In the first unit, we examined descriptive statistics where we described the data using visual and numerical summaries. If we made any conclusions, it was only about the specific data we were looking at. 
+
+Now, we are going to look specifically at sample data and use it to make conclusions about the population as a whole. That is, instead of simply describing the data, we are going to make inferences about the population from a sample. 
+
+We will do this in two ways: 1) Hypothesis tests and 2) Confidence intervals.
+</para><para id="eip-847"><title>Hypothesis tests</title>We actually have already done hypothesis tests, but we did so informally. Back in Chapter 4 when we evaluated evidence, we actually were doing hypothesis tests (or "null hypothesis significance tests"). In particular, a hypothesis test begins with making an assumption (i.e. the null hypothesis) which is often the opposite of what we want to show. Then we collect evidence by collecting a random and representative sample (to the best of our abilities). Then we determine how well the evidence aligns with the assumption. If the evidence is very different from the assumption, we start to question the assumption. If the evidence leads us to question the assumption, we reject the null hypothesis. If the evidence does not make us question the assumption, we do not reject the null hypothesis. </para><para id="eip-899">This process of evaluating evidence should sound familiar as it is what we did in Chapter 4. As we are familiar with the process, we want to learn the following in this chapter:</para><list id="eip-189"><item>The formal procedures of performing hypothesis tests. </item>
+<item>How to choose and justify the appropriate model to use when performing a hypothesis test. </item>
+<item>The correct terminology for hypothesis tests.</item>
+<item>What type I and II errors are and why they are important. </item></list><para id="eip-312"><title>Confidence intervals</title>A hypothesis test only tells you whether you should reject or not reject the null hypothesis. For example, suppose you are testing that the mean number of hours that people sleep at night is less than 8 hours. Your final conclusion will either indicate if there is enough evidence or not enough to support that the mean number of hours that people sleep at night is less than 8 hours. But if your conclusion is that there is enough evidence, the hypothesis test does not tell you by how much it is less than 8 hours. Are people getting, on average, 7.5 hours of sleep per night or only 4 hours? The hypothesis test gives no indication. </para><para id="eip-824">This is where a confidence interval comes in. A confidence interval provides an estimate of the population parameter based on sample data. So unlike a hypothesis test, the confidence interval can indicate around how many hours of sleep people are, on average, getting per night. This can be very useful. If the estimate is that people are getting somewhere around 7.5 hours of sleep on average, we know that, though it is different from 8 hours, it is not that different. But if the estimate says that people are getting only 4 hours, on average, then we should be worried. Thus, confidence intervals and hypothesis tests both give us useful information and both are needed to get a complete picture of the situation. </para><para id="eip-542">For confidence intervals, we want to learn the following: </para><list id="eip-815"><item>Understand what a confidence interval is.  </item>
+<item>How to find and interpret a confidence interval.</item>
+<item>Define the factors that impact the width of the confidence interval. </item>
+<item>Understand what a confidence level is. </item></list><section id="eip-120"><title>Review</title><para id="eip-203">
+This unit takes many of the things we learned from the previous units and brings them all together. Therefore, prior to starting this unit, you'll want to be familiar with the following key terms/ideas and their symbols (if relevant). 
+</para><list id="eip-419"><item>statistic vs. parameter </item>
+<item>sample mean vs. population mean (and their related symbols)</item>
+<item>sample standard deviation vs. population standard deviation (and their related symbols)</item>
+<item>sample proportion vs. population proportion (and their related symbols)</item>
+<item>sampling distribution of sample means and the central limit theorem</item>
+<item>binomial distribution</item>
+
+
+
+</list></section></content>
+
+</document>

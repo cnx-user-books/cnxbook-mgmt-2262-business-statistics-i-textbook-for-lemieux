@@ -1,0 +1,242 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+
+<title>One population means test when population standard deviation known - C Lemieux</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m71325</md:content-id>
+  <md:title>One population means test when population standard deviation known - C Lemieux</md:title>
+  <md:abstract>One population means test when population standard deviation known</md:abstract>
+  <md:uuid>7b335a7e-10df-426b-b4b7-c9a161a819aa</md:uuid>
+</metadata>
+
+<content>
+  <para id="delete_me">In this section, we will learn how to do a hypothesis test for one population mean when the population standard deviation is known. 
+
+
+
+  </para><para id="eip-79">In general, a one population mean test is done when we are investigating only one random variable and the data is quantitative. Further, we are examining a situation where we are concerned about the measure of center of the data. 
+
+
+
+</para><para id="eip-387">Further, in this class, we are only examining the situation where the sampling distribution of sample means can be assumed to be normally distributed. The situation where it is not normally distributed is beyond the scope of this course. </para><para id="eip-627">To learn the one means population test when the population standard deviation is known, we will examine our eight-step hypothesis test. </para><note id="eip-650" type="tip">The central limit theorem for the sampling distributions of sample means is important for doing Step 3 of the hypothesis test. You may want to review it before continuing. </note><section id="eip-8"><title>Eight-step hypothesis test for one-population mean test when population standard deviation is known</title><list id="eip-idm404501200" list-type="enumerated" number-style="arabic" class="stepwise"><item><emphasis effect="bold">State <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ and <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+</emphasis>. As this is a one-population means test, our hypotheses will include the symbol <m:math>
+ <m:ci>μ</m:ci></m:math>
+. There are three versions of the alternative hypothesis and there opposing null hypotheses: <list id="eip-idm318477824"><item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+ <m:ci>μ</m:ci></m:math>
+&gt; some number (<m:math>
+<m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>) vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:leq/><m:ci>μ</m:ci><m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math> </item> 
+
+<item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+ <m:ci>μ</m:ci></m:math>
+&lt; some number (<m:math>
+<m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>) vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:geq/><m:ci>μ</m:ci><m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math>  </item> 
+
+<item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+ <m:ci>μ</m:ci></m:math>
+≠ some number (<m:math>
+<m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>) vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:eq/><m:ci>μ</m:ci><m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math>  </item> 
+</list><para id="eip-548">For ease, we often write the null hypothesis simply as <m:math>
+<m:apply><m:eq/><m:ci>μ</m:ci><m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math> as we only care about the equality for the null. This results in the following:</para><list id="eip-759"><item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+ <m:ci>μ</m:ci></m:math>
+&gt; <m:math>
+<m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math> vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:eq/><m:ci>μ</m:ci><m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math> (right-tailed test)</item> 
+
+<item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+ <m:ci>μ</m:ci></m:math>
+&lt; <m:math>
+<m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math> vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:eq/><m:ci>μ</m:ci><m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math> (left-tailed test) </item> 
+
+<item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+ <m:ci>μ</m:ci></m:math>
+≠ <m:math>
+<m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math> vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:eq/><m:ci>μ</m:ci><m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math> (two-tailed test) </item> </list><para id="eip-977">Notice how "some number" (i.e. <m:math>
+<m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>) is the same both for <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math> and <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>. This is because they are opposites of each other. Therefore, the only thing that changes is the binary sign between them. 
+</para></item>
+<item><emphasis effect="bold">Summarize the sample data</emphasis>. For a one population means test when the population standard deviation is known, your evidence will consist of the sample mean, the population standard deviation, and the sample size. 
+<note id="eip-idm764411792" type="important"><title>VERY VERY IMPORTANT!!!!!</title>The population standard deviation <m:math>
+<m:ci><m:mi>σ</m:mi></m:ci> </m:math>can only be known if it is provided to you in the question!!! Remember that a hypothesis test is always done using sample data. Therefore, you can NOT find the population standard deviation by finding the standard deviation of the sample. To repeat: <emphasis>The population standard deviation is only known if it is clearly given to you in the question</emphasis>. For example, if the question states "the population standard deviation is 3" then you know the population standard deviation. But if the question only says "the sample standard deviation is 3" or you are only given the sample data, then the population standard deviation is NOT known. We will discuss what to do in this situation in the next section.
+
+</note>
+
+</item>
+<item><emphasis effect="bold">State and justify the model (or distribution) being used</emphasis>. As we are doing a hypothesis test for one population mean when the population standard deviation is known, we will be using the standard normal distribution as our model. To use this model, we need to determine two things: 
+<list id="eip-idm365427168">
+<item> Is the population standard deviation known? If it is clearly stated in the question (i.e. given to you), then the answer is yes. If it is not clearly given to you, then read the next section to find out what to do. </item>
+<item> Is the sampling distribution of sample means normally distributed? To determine this, we use the central limit theorem:
+<list id="eip-idm359861904"><item> Is the sample size greater than 30? If yes, then the sampling distribution will be approximately normal regardless of the shape of the parent population. </item>
+<item> If the sample size is less than 30, then we need to determine if the population distribution is normal. Because if the population distribution is normal, then the sampling distribution of sample means is normal regardless of the sample size. Either the shape of the population distribution will be stated in the question or you can determine it by examining a normal probability plot. </item> 
+<item> If the sample size is less than 30 and the population distribution is not normal, you do NOT have the knowledge to perform this hypothesis test. </item> </list> </item>
+</list> </item>
+<item><emphasis effect="bold">Choose an appropriate level of significance.</emphasis> Consider the implications of a Type I vs. a Type II error in choosing your level of significance, as well as any ethical considerations.</item>
+<item><emphasis effect="bold">Calculate the test statistic and related <emphasis effect="italics">p</emphasis>-value</emphasis>. The test statistic for this situation is <m:math>
+<m:apply><m:power/><m:ci>z</m:ci><m:cn>*</m:cn></m:apply>
+</m:math>= <m:math>
+    
+      <m:mfrac><m:mrow><m:mover><m:mi>X</m:mi><m:mo>–</m:mo></m:mover>
+      <m:mo>-</m:mo><m:msub><m:mi>μ</m:mi><m:mn>0</m:mn></m:msub></m:mrow>
+      <m:mrow><m:mi>σ</m:mi><m:mo>/</m:mo><m:msqrt><m:mi>n</m:mi></m:msqrt>
+      </m:mrow></m:mfrac>
+     </m:math>. The <emphasis effect="italics">p</emphasis>-value is then found by finding the probability in the tail of the standard normal distribution where the test statistic is the boundary of the tail. 
+<list id="eip-idm1291905248">
+<item>If it is a right-tailed test, find P(Z &gt; <m:math>
+<m:apply><m:power/><m:ci>z</m:ci><m:cn>*</m:cn></m:apply>
+</m:math> )  </item>
+
+<item>If it is a left-tailed test, find P(Z &lt; <m:math>
+<m:apply><m:power/><m:ci>z</m:ci><m:cn>*</m:cn></m:apply>
+</m:math> )  </item>
+<item>If it is a two-tailed test, find P(Z &gt; |<m:math>
+<m:apply><m:power/><m:ci>z</m:ci><m:cn>*</m:cn></m:apply>
+</m:math>| ) times 2.  </item>
+
+</list>
+
+
+ </item>
+<item><emphasis effect="bold">Discuss what the <emphasis effect="italics">p</emphasis>-value measures in context</emphasis>. Your sentence will look something like this: The probability we observed a sample mean of [insert appropriate inequality based on tail of test] ** [include relevant units], assuming [insert null hypothesis] is true, is [insert <emphasis effect="italics">p</emphasis>-value].</item>
+<item><emphasis effect="bold">Make a decision.</emphasis> 
+<list id="eip-idm1310056528"><item>Do not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ if <emphasis effect="italics">p</emphasis>-value is greater than or equal to <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+ </item>
+<item>Reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ if <emphasis effect="italics">p</emphasis>-value less than <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+ </item>
+</list></item>
+<item><emphasis effect="bold">Offer a concluding sentence.</emphasis> Using accessible language summarize your conclusion in sentence form within the context of the problem and referring to the alternative hypothesis.</item>
+</list></section><example id="eip-718"><para id="eip-848">
+ Suppose Irene, who owns a top bakery in the city, claims that she has the best bread in the city by any measure. Not only is her bread the tastiest, it is also the fluffiest and the tallest, averaging 15 cm in height. Another baker, Jose, wishes to challenge Irene’s claim that her bread is the tallest. As evidence he will provide a sample of 40 randomly selected loaves of bread and have their heights measured in his attempt to prove that his bread heights actually exceed 15 cm, on average. In doing so, he obtains a sample mean bread height of 15.5 cm. He also knows from baking thousands of loaves that his variation is very low: specifically the population standard deviation is 0.9 cm.
+</para>
+<list id="eip-idm380438944"><item><emphasis effect="bold">State <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ and <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+</emphasis>. We define  <m:math>
+ <m:ci>μ</m:ci></m:math> in this problem to be the population mean of height of Jose's bread. 
+
+ <newline/><m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+: µ &gt; 15
+ <newline/><m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+: µ = 15 
+     
+<newline/> Note: This is a right-tailed test. 
+
+</item>
+<item><emphasis effect="bold">Summarize the sample data</emphasis>. The sample size is 40, the sample mean is 15.5 cm, and the population standard deviation is 0.9 cm.</item>
+<item><emphasis effect="bold">State and justify the model (or distribution) being used</emphasis>. As the population standard deviation is known and this is a one population means tests, we want to use the standard normal distribution. To do this, we need to ensure that the sampling distribution of sample means is normal. As the sample size is greater than 30, we can assume the sampling distribution of sample means is approximately normal. Therefore it is appropriate to do model this situation using the standard normal distribution. </item>
+<item><emphasis effect="bold">Choose an appropriate level of significance.</emphasis> The required strength of evidence can now be determined by considering the implications of a Type I vs. a Type II error. In this context, Jose will make a Type I error if he concludes that his bread heights average more than 15 cm when in fact they do not. He will make a Type II error if he concludes that there is not enough evidence that his bread heights average more than 15 cm when in fact they do. Which error is worse will depend on where you are standing. Jose would consider a Type II error worse, whilst Irene would consider a Type I error worse. To be fair, we will choose a level of significance of 5%, which is generally considered a good balance between the two types of errors. This means, we will reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ if the <emphasis effect="italics">p</emphasis>-value &lt; 0.05.</item>
+<item><emphasis effect="bold">Calculate the test statistic and related <emphasis effect="italics">p</emphasis>-value</emphasis>. The test statistic is found as follows: z* = (15.5-15)/(0.9/√40) = 3.51. As it is a right-tailed test, we find P(Z&gt;3.51) using the Excel function "=1-NORM.S.DIST(3.51,1)". This gives us p = 0.0002. </item>
+<item><emphasis effect="bold">Discuss what the <emphasis effect="italics">p</emphasis>-value measures in context</emphasis>. Under the assumption that Jose’s bread is no taller than Irene’s (this his bread averages only 15 cm), the probability of obtaining a sample of 40 with a mean of 15.5 cm (or more) is only 0.0002 or 0.02%. </item>
+<item><emphasis effect="bold">Make a decision.</emphasis> Since p (0.0002) &lt; 0.05, we reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+. </item>
+<item><emphasis effect="bold">Offer a concluding sentence.</emphasis> Therefore we can conclude that the evidence suggests that Jose’s bread averages more than 15 cm and is, on average, taller than Irene’s.</item>
+</list></example><example id="eip-125"><para id="eip-idm1098902560">
+ Charter Air claims that its new executive boarding service has improved the time it takes for business passengers to purchase tickets, store luggage and board the plane. They believe that is less than the previous time of 12 minutes. A sample of 9 customers of this new exclusive service indicates the that the mean to complete these three tasks is 9.3 minutes with a population standard deviation of 3.32 minutes. Previous studies have revealed that boarding times tend to follow a normal distribution.
+</para>
+<list id="eip-idm1263997232"><item><emphasis effect="bold">State <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ and <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+</emphasis>. We define  <m:math>
+ <m:ci>μ</m:ci></m:math> in this problem to be the population mean time to complete these three tasks with the new executive boarding service. 
+
+ <newline/><m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+: µ &lt; 12
+ <newline/><m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+: µ = 12 
+     
+<newline/> Note: This is a left-tailed test. 
+
+</item>
+<item><emphasis effect="bold">Summarize the sample data</emphasis>. The sample size is 9, the sample mean is 9.3 minutes, and the population standard deviation is 3.32 minutes.</item>
+<item><emphasis effect="bold">State and justify the model (or distribution) being used</emphasis>. As the population standard deviation is known and this is a one population means tests, we want to use the standard normal distribution. To do this, we need to ensure that the sampling distribution of sample means is normal. As we are told that it is likely that the population distribution of time to complete these three tasks is normally distributed, we can assume the sampling distribution of sample means is approximately normal. Therefore it is appropriate to do model this situation using the standard normal distribution. </item>
+<item><emphasis effect="bold">Choose an appropriate level of significance.</emphasis> A Type I error in this case would be for Charter Air to claim their boarding time is less than 12 minutes, when in fact it is not. A Type II error in this case would be for Charter Air not to claim their boarding time is less than 12 minutes, when in fact it is. A Type I error could lead to false advertising, which has both ethical and legal implications, so it would be best to minimize the likelihood of making this type of error. Alpha should be set at 1% (or at most 5%). Reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ if the <emphasis effect="italics">p</emphasis>-value &lt; 0.01.</item>
+<item><emphasis effect="bold">Calculate the test statistic and related <emphasis effect="italics">p</emphasis>-value</emphasis>. The test statistic is found as follows: z* = (9.3-12)/(3.32/√9) = -2.43. As it is a left-tailed test, we find P(Z&lt; -2.43) using the Excel function "=NORM.S.DIST(-2.43,1)". This gives us p = 0.0203. </item>
+<item><emphasis effect="bold">Discuss what the <emphasis effect="italics">p</emphasis>-value measures in context</emphasis>. The probability of getting a sample mean of 9.3 minutes (or less), with an assumed population mean of 12 minutes for completing these three boarding tasks, is 2.03%. </item>
+<item><emphasis effect="bold">Make a decision.</emphasis> Since p (0.0203) &gt; 0.01, we do not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+. </item>
+<item><emphasis effect="bold">Offer a concluding sentence.</emphasis> There is insufficient evidence to indicate that the mean time to complete these three tasks with the new executive boarding service has improved to be less than 12 minutes.</item>
+</list></example></content>
+
+</document>

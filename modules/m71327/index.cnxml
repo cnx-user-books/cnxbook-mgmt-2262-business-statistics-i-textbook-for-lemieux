@@ -1,0 +1,334 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+
+<title>Practice Questions (Descriptive Statistics) - C Lemieux</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m71327</md:content-id>
+  <md:title>Practice Questions (Descriptive Statistics) - C Lemieux</md:title>
+  <md:abstract>Practice Questions</md:abstract>
+  <md:uuid>c87ebbb0-f3ed-4a54-a6f6-52073fe75ec6</md:uuid>
+</metadata>
+
+<content>
+  <note id="eip-107" type="important">If a question has a set of data, please see the course site for the Excel file.</note><exercise id="eip-385"><problem id="eip-489">
+ <para id="eip-idm359886240">The downturn in the oil and gas industry has ripple effects through multiple industries. Consumers are making hard choices when it comes to purchases. “Frivolous” expenses, like eating out, are some areas where consumers are choosing to reduce their spending. </para>
+	 <para id="eip-idm1770145808">Duke’s is a family friendly eatery that also has a small bar attached. The restaurant can fit a maximum of 130 patrons at once and the bar can fit a maximum of 50 patrons. Based on anecdotal evidence, management at Duke’s believes that, on average, the number of customers coming to the restaurant has decreased since the downturn, but that the number of customers in the bar has stayed about the same. They think that customers don’t want to spend big money on a meal, but they still want to get together with friends for a pint to watch the game. They have also noticed that, though there are less customers in the restaurant, those that do come in are, on average, spending more per table than prior to the downturn. They think that when customers eat out, they are celebrating something so they spend more freely, which has resulted in a higher daily revenue. Further, the customers in the bar are mostly buying alcoholic beverages and are not getting food (just a pint, no nachos). That is, there may be the same number customers in the bar but, on average, they aren’t spending as much. </para>
+	 <para id="eip-idm393183776">The managers at Duke’s want to determine if there is any truth to the anecdotal evidence. To do this, they want you to do a statistical analysis of the data they’ve collected. Based on data from prior to the economic downturn, on average, there were 207.6 patrons at the restaurant per day and 98.3 patrons at the bar each day. The average daily revenue for the restaurant was $5,024.25, while for the bar was $1,796.4. </para>
+	 <para id="eip-idm378292608">The managers collected data by putting all of the nights they were open starting in January 2015 into a spreadsheet until September 2017. Then from the top of the list, they choose every 21st date to get their random sample of 48 dates. Then for each date they chose, they found the number of patrons in the bar and in the restaurant for that date, and daily revenue in the bar and in the restaurant for that date. This is the data that is in the Excel sheet on BB.  </para>
+<list id="eip-idm975924736" list-type="enumerated" number-style="arabic"><item> 
+<list id="eip-idm387313216" list-type="enumerated" number-style="lower-alpha"><item> What sampling technique did the managers use?</item>
+<item> There are at least two things that the managers did really wrong when they used their sampling technique. State two things wrong with their technique. Explain why they are wrong</item>
+</list></item>
+
+<item> 
+Investigate the managers’ belief about the number of patrons in the bar. To do this investigation, answer the following questions. 
+<list id="eip-idm389293904" list-type="enumerated" number-style="lower-alpha"><item>There is one variable being studied that are relevant to this question. State the variable and which column in the spreadsheet have the data. Categorize the variable. </item>
+<item>Use Excel to create a box plot for the variable. Insert the box plot below. Make sure to properly title and label the box plot. </item>
+<item>Are there any outliers? If so, what are they? </item>
+<item>If there are outliers, interpret the outliers in the context of the question. If there are not outliers, interpret what that means in the context of the question. </item>
+<item>Look at the box plot for the bar. Does it support or refute the managers’ belief about the number of patrons? Support your answer. Your answer needs to refer to appropriate measures (note the plural – you have to refer to more than one measure). </item>
+</list></item>
+
+<item> 
+Investigate the managers’ belief about daily revenue in the restaurant. To do this investigation, answer the following questions.
+<list id="eip-idm383856672" list-type="enumerated" number-style="lower-alpha"><item>There is one variable being studied that are relevant to this question. State the variable and which column in the spreadsheet have the data. Categorize the variable. </item>
+<item>Use Excel to create all of the appropriate numerical summaries for the variable. Insert the results below. </item>
+<item>What is the best measure of centre? Explain your reasoning. Make sure you state the value of the measure you have chosen.  </item>
+<item> What is the best measure of variation? Explain your reasoning. Make sure you state the value of the measure you have chosen. </item>
+<item>Look at your answers in c) and d). Does they support or refute the managers’ belief about the daily revenue in the restaurant? Support your answer. Your answer needs to refer to appropriate measures (note the plural – you have to refer to more than one measure).  </item>
+</list></item>
+</list></problem>
+
+<solution id="eip-616">
+ <list id="eip-idm1274781360" list-type="enumerated" number-style="arabic"><item> 
+<list id="eip-idm966962544" list-type="enumerated" number-style="lower-alpha"><item> Systematic “random” sampling</item>
+<item> 1.	The managers did not choose a random starting point. Since they have not done this, they have missed the random part of the sampling technique. That is, their data was not collected randomly. 
+2.	The managers choose k to be 21, which is exactly three weeks. This means that their sample will only collect data from the same day. Thus their data is not representative of the population.
+</item>
+</list></item>
+
+<item> 
+Investigate the managers’ belief about the number of patrons in the bar. To do this investigation, answer the following questions. 
+<list id="eip-idm360116512" list-type="enumerated" number-style="lower-alpha"><item>Variable: Number of patrons in the bar per day. In column D.  
+Type of variable: Quantitative (discrete) 
+ </item>
+<item><figure id="Boxplot1"><media id="dogpic" alt="Boxplot for Exercise 1">
+    <image mime-type="image/png" src="../../media/Boxplot1.png"/>
+  </media>
+  
+<caption>Boxplot for Exercise 1
+  </caption></figure></item>
+<item>There are three outliers (55, 57 x 2)  . They are all low, mild outliers  . </item>
+<item>The outliers represent dates where there were very few patrons in the bar compared to the rest of the sample. This means business was slow on these dates. </item>
+<item>LThe managers’ claim is that the number of patrons in the bar has stayed about the same since the downturn, on average. Prior to the downturn, the number of patrons in the bar on average was 98.3. Based on the box plot, we can see that the median number of patrons after the downturn is 88.50 and the interquartile range is 13.25. This means that 50% of the data values are between 81.75 patrons per day and 95 patrons per day. Thus, 75% of the data values are below 95 patrons per day. Further there are three low outliers. Based on this, it appears that the number of patrons per day in the bar has actually decreased. Thus, the data refutes the managers’ belief about the number of patrons.  </item>
+</list></item>
+
+<item> 
+Investigate the managers’ belief about daily revenue in the restaurant. To do this investigation, answer the following questions.
+<list id="eip-idm1267400928" list-type="enumerated" number-style="lower-alpha"><item>Variable: Daily revenue in the restaurant per day. In column B.  
+Type of variable: Quantitative (continuous – but could also be considered discrete as you count revenue) 
+ </item>
+<item><figure id="Table1"><media id="Table1a" alt="Descriptive statistics for Exercise 1">
+    <image mime-type="image/png" src="../../media/Table1.png"/>
+  </media>
+  
+<caption>Descriptive statistics for Exercise 1
+  </caption></figure></item>
+<item>The best measure of centre for this data is the mean   as there are no outliers and the mean (5171.19) and the median (5077.50) are close to each other (less than $100 difference for data that is over $5000 means a difference of less than 2%)  . 
+Mean = $5,171.19  
+  </item>
+<item>The best measure of variation for this data is the standard deviation  . We are not comparing data sets so the coefficient of variation is not necessary and though the IQR could work, it is not well-known  . Therefore the standard deviation is the best bet. 
+Standard deviation: $458.49  
+</item>
+<item>The managers’ claim is that the restaurant revenue has increased since the downturn. The average prior to the downturn was $5,024.25. The mean for this data set is $5,171.91, which suggests that the average has increased, but we need to take into account variation. They typical range for this data set is $4,712.70 to $5,629.68 (found by taking the mean +/- standard deviation; 5171.91-458.49, 5171.91+458.49). Once we take variation into account we can see that the downturn average falls in the interval (i.e. 5024.25 is between 4712.7 and 5629.68). This means that it is unclear if the average daily revenue has changed since the downturn. This means that the data neither supports nor refutes the managers’ belief, but it does appear to suggest that the average has not increased.   </item>
+</list></item>
+</list></solution>
+</exercise><exercise id="eip-721"><title>Which sales method wins?</title><problem id="eip-966">
+<para id="eip-idm715913072">  “I’m telling you that if we reduce the price, we’ll sell more!” yelled Feras. </para>
+
+<para id="eip-idm301481856">“And I’m telling you that the loss in gross profit will outweigh the added sales!” exclaimed Sabrina.</para>
+
+<para id="eip-idm485347584">Cheryl sighed. These meetings always devolved this way. Every year they had the same debate when it came to introducing the holiday gift packages. Feras and Sabrina were always on opposite sides of how to price the Hot Trio Gift Basket (which included three beverage selections: Fine Grind Dark Coffee, French Vanilla Cappuccino and Creamy Hot Chocolate) at the beginning of the Christmas buying season. </para>
+
+<para id="eip-idm474891664">“OK. I’m tired of this debate. We are going to end this once and for all. This year we are going to implement both of your ideas. Whichever method demonstrates the best results will be the method we use next year. Understood?” Both Feras and Sabrina gleefully nodded. Each couldn’t wait to show the other one up. </para>
+
+<para id="eip-idm735034016">After much discussion, they decided on a study design. For their 120 coffee shops across Western Canada, 60 shops were chosen at random to introduce the gift basket at the regular price of $20. The other 60 shops would introduce the gift basket by offering a limited two-week introductory price that was 10-20% less than the regular price. (Each of these shops choose a discount of between 10% and 20%.) After the two weeks, they would then increase the price back to the regular selling price of $20.00. None of the 120 shops would advertise the release of the Hot Trio Gift Basket, but instead would display the gift basket in a predetermined way. Total sales of the gift baskets would be computed for each store for the first two weeks they were introduced (see attached Excel spreadsheet for the results). Cheryl decided to look both at total number of gift baskets sold (in columns B and G in Excel file) and gross profit (in columns D and I). The cost of the gift basket to produce is $10.</para> 
+
+<list id="eip-idm506152112" list-type="enumerated" number-style="arabic"><item>
+What are the variables being studied? Categorize each of them. 
+</item>
+
+<item>
+Analyze how the study was conducted. To do this, answer the following questions.
+<list id="eip-idm313059936" list-type="enumerated" number-style="lower-alpha"><item>Provide one good thing about how the study was designed. </item>
+<item>Provide one flaw with how the study was designed.  </item>
+</list>
+</item>
+
+<item> Compare the total number of gift baskets sold per store for each type of price (i.e. the introductory discount vs. the regular price). To do this answer the following questions.
+<list id="eip-idm674234272" list-type="enumerated" number-style="lower-alpha"><item>Create a boxplot for the total number of gift baskets sold for each type of price. Insert both of them here. </item>
+<item>Are there any outliers? What are they? If there are outliers, what do they mean in the context of the story. If not, what does that mean in the context of the story. </item>
+<item> Interpret both of the box plots. In particular, comment on where the box plots are centred and the variability in each data set. </item>
+<item>Based on the above, is there a type of price that results in a higher total number of gift baskets sold? Explain your answer. </item>
+</list></item>
+
+<item> Compare the gross profit for each type of price (i.e. the introductory discount vs. the regular price). To do this answer the following questions.
+<list id="eip-idm433275104" list-type="enumerated" number-style="lower-alpha"><item>Determine the best measure of centre to use for the gross profit for each type of price. Provide this measure of centre for each data set. Explain why it is the best measure of centre for these data sets.  </item>
+<item>What do the measures of centre tell you about the data sets in the context of the story? </item>
+<item>Determine the best measure of variation to use for gross profit for each type of price. Provide this measure of variation for each data set. Explain why it is the best measure of variation for these data sets. </item>
+<item>What do the measures of variation tell you about the data sets in the context of the story? </item>
+<item>Based on the above, is there a type of price that results in a higher gross profit? Explain your answer. </item>
+</list>
+</item>
+
+<item>
+Based on what your answers in questions 3 and 4, which type of price is better? Provide a reason for your choice. Your explanation should include be based both in statistics and business. 
+</item>
+</list></problem>
+
+<solution id="eip-516">
+  <para id="eip-347"><list id="eip-idm505572112" list-type="enumerated" number-style="arabic"><item>
+Number of gift baskets sold – quantitative discrete; 
+<newline/>Gross profit – quantitative continuous
+
+</item>
+
+<item>
+<list id="eip-idm426802816" list-type="enumerated" number-style="lower-alpha"><item> 1) Shops were chosen at random to determine if they would introduce the gift basket or not. This ensures that the sample is random.
+<newline/>
+2) The gift baskets were all the same and they were presented in the stores the same way. This ensures that the customers were getting a consistent framing of the product.
+ </item>
+<item> 1) By having the discount stores choose their discount, there was no consistency in the amount of the discount—they ranged from 10% to 20%. This can cause potential problems in determining which sales method is better without doing a more detailed analysis of how the discounts did relative to each other. 
+<newline/>2) Further, there was no pairing of stores. That is, to properly compare this it would be beneficial to pair similar stores (i.e. similar sales, customers, locations, etc.) to ensure that we are comparing the sales fairly. By not doing this, this study has not limited the variables. If there is a difference in the methods, it could be explained by the stores having different demographics. For example, all of the non-discount stores could be located in more affluent neighbourhoods. 
+<newline/>3) Another issue is the lack of advertising. Though this may have been done to avoid issues of two stores close to each other not having the same pricing, it does lead to issues in the study. If people knew that the sale was available at certain stores, would they have considered driving to the store for the discount? Thus the lack of advertising results in the true potential of the sale being diminished. 
+</item>
+</list>
+</item>
+
+<item>
+<list id="eip-idm375223264" list-type="enumerated" number-style="lower-alpha"><item><figure id="Boxplot2"><media id="Boxplot2a" alt="Boxplot for Exercise 2">
+    <image mime-type="image/png" src="../../media/Boxplot2.png"/>
+  </media>
+  
+<caption>Boxplot for Exercise 2
+  </caption></figure></item>
+<item> There is a mild outlier (207) for the stores that had discounts. This means that this store sold significantly less gift baskets than the other stores of this type. 
+<newline/>
+There are no outliers for the stores that had no discounts. This means that none of the stores sold significantly more or less gift baskets than the other stores of this type. 
+</item>
+<item>The boxplot for the stores that had a discount is centred at the median of 320 while the stores without a discount are centred at 304. Thus, on average, the discount stores sold 320 gift baskets in the first two weeks of sales, while the non-discount stores sold 304. The middle 50% of the stores under the discount scheme sold between 302 and 337 units, while the middle 50% of the stores under the regular price scheme sold between 292 and 318 units. <newline/>Further, we can see that more than 25% of the discount stores sold over 330 gift baskets, while the non-discount stores had no stores that sold over 330. 
+<newline/>The IQR for the discount stores is 35.25 while for the non-discount stores is 26.25. This suggests that the non-discount stores had a more consistent volume of gift baskets sold compared to the discount stores.
+ </item>
+<item> The discount stores appear to sell more gift baskets. This indicated both by a larger median and that 25% of their stores have sold more than 330 gift baskets while none of the non-discount stores have achieved selling more than 330 gift baskets. Though the non-discount stores have more consistent results in the volume sold, the less variation is centred around a lower number of gift baskets sold.</item>
+</list></item>
+
+<item>
+<list id="eip-idm384055280" list-type="enumerated" number-style="lower-alpha"><item> As there is a low mild outlier in the discount gross profit data, we need to compare the mean and median to see if the mean gross profit of the discount stores would be pulled down by the outlier. This could skew the results.  The mean is $2193.90 and the median is $2199.50. As they are similar we could use either of them, but as the mean is almost $6 less, I will use the median. Though the regular priced stores do not have an outlier, we want to use the same measure of centre for both so that we are comparing like values (i.e. median to median). 
+<newline/>
+Median discount stores = $2,199.50
+<newline/>Median non-discount stores = $3,040.00
+</item>
+<item>The median for the non-discount stores is greater than the median of the discount stores. This suggests that, even though the discount stores sold more gift baskets, the gross profit for the non-discount stores is, on average, greater than the discount stores.  </item>
+<item>To compare the amount of variation, we want to use a relative measure as the means are not the same. Thus we want to use the coefficient of variation. 
+<newline/>
+Coefficient of variation discount stores = 8.44%
+<newline/>Coefficient of variation non discount stores = 4.45%
+ </item>
+<item>As the coefficient of variation is less than 10% for each type of store, this suggests that all of the stores had very little variation amongst their gross profits. The non-discount stores though did have the smallest coefficient of variation, which means they had the least variation in their gross profit. This means that these 60 stores had consistent gross profit. </item>
+<item> For the gross profit, the non-discount stores did significantly better, on average, than the discount stores as determined by the median. 
+<newline/>Further the variation for the gross profit was lowest with the non-discount stores (4.45% vs. 8.44%). This suggests that not only do the non-discount stores provide the best profit margin, but they also are more consistent than the discount stores in achieving it. 
+</item>
+</list>
+</item>
+
+<item>
+<newline/>In conclusion, Feras was correct that the discount stores would sell more, but Sabrina was also correct that the loss in profit would not outweigh the advantage of selling more. Based on the assumption that the company is interested in making a greater gross profit to further the dividends of their stockholders, the company is better off selling the gift baskets with no discount. This is supported by the median gross profit ($3,040.00) for the regular priced stores being greater than the median gross profit of the discount stores ($2,199.50). Also, the gross profit of the regular priced stores is more consistent than the gross profit of the discount stores. 
+<newline/><emphasis>Alternative conclusion:</emphasis>
+<newline/>The above conclusion is reached based on the assumptions that the company is a publicly traded company whose goal is to raise dividends for their shareholders. Though this is a fair assumption, it should be noted that the discounted gift baskets could be a better option if the company is using it as a marketing ploy to get more customers to come into the store. If that is their goal, then the discounts are a better option.
+
+</item>
+</list></para></solution>
+</exercise><exercise id="eip-18"><problem id="eip-198">
+<para id="eip-idm517311888">Amal shoved a piece of paper at Karim as he walked in the door. “Look at this. I went for my dentist check-up last week and they charged me $273.45.” </para>
+
+<para id="eip-idm641758736">“That’s ok. Right? Your insurance covers it.” Karim hedged as he shoved off his jacket. </para>
+
+<para id="eip-idm647111136">“You’d think so. But nooooo. They cover a maximum of $217.91. So, I owe the dentist money. It is such a scam.” Amal threw her hands up in frustration. </para>
+
+<para id="eip-idm432654080">“We can cover the … $60 difference. It isn’t a big deal.” He soothed as he gave her a kiss.</para> 
+
+<para id="eip-idm845713280">“We can cover it. But not every family can. People shouldn’t have to make choices between paying for food and rent or getting proper health care. We apparently live in the richest province in Canada yet we don’t even cover basic dental care. It’s disgusting.”</para>
+
+<para id="eip-idm231870768">Karim decided it wasn’t the right time to bring up that the dental prices were probably high because they lived in the richest province in Alberta. He waited as she took a few breaths.</para>
+
+<para id="eip-idm519289264">Amal’s shoulders slumped. “I’m sorry. You probably don’t want to hear this as you walk in the door. But it makes me so angry. Look I called a bunch of our friends and I found out how much their dentists charged them for a basic check-up. You wouldn’t believe what I found out.” </para>
+
+<para id="eip-idm237067472">Amal pulled Karim over to her laptop where a spreadsheet was open with many figures and numbers. Beside the name of their friends was a dollar amount representing the amount of money each person had been charged by their dentist. (see the Excel sheet posted on BB)</para>
+
+<para id="eip-idm254817680">“Once I got the data, I worked out how much they would have to pay out of pocket. That’s this column.” Amal pointed to the third column. “If they were charged under $217.91, I put 0 in as they wouldn’t have to pay anything out of pocket. Then I did an analysis of how much people are being overcharged in Alberta. But then I thought this wasn’t enough. So I called some of our friends back home in Ontario. They get covered for a maximum of $219 by their insurance companies (thanks internet). I looked at how much they had to pay out of pocket.” Amal pointed to the fifth and sixth column on the Excel sheet as she was talking. “It’s crazy what I found.”
+</para>
+
+<list id="eip-idm672188928" list-type="enumerated" number-style="arabic"><item> What are the two variables being studied? Categorize each of them.</item>
+
+<item> Critique how Amal collected her data. To do this answer the following questions.
+<list id="eip-idm266109200" list-type="enumerated" number-style="lower-alpha"><item> What type of sampling technique did Amal use?</item>
+<item>Amal is trying to make an inference from her sample about the population of all Albertans. Is this appropriate? Explain. </item>
+</list>
+</item>
+
+<item> Create a boxplot for the amount people have to pay out of pocket in Alberta and another for what they have to pay out of pocket in Ontario using MegaStat. Insert them both here. </item>
+
+<item> Create the numerical descriptive statistics using MegaStats for both data sets. Include all appropriate numerical descriptive statistics. Insert the results below.</item>
+
+
+
+<item> Analyze the measures of centre. To do this answer the following questions.
+<list id="eip-idm925565184" list-type="enumerated" number-style="lower-alpha"><item>Are there any outliers? What are they? If there are outliers, what do they mean in the context of the story. If not, what does that mean in the context of the story. Make sure you comment on both data sets. </item>
+<item>Determine the best measure of centre to use for comparing the two data sets. Provide this measure of centre for each data set. Explain why it is the best measure of centre for these data sets. </item>
+<item>Based on the above, make some initial conclusions on whether there is a difference in how much people pay out of pocket to see a dentist for a basic check-up in Alberta vs. Ontario, on average. </item>
+</list>
+</item>
+
+<item>
+Analyze the measures of variation. To do this answer the following questions.
+<list id="eip-idm232056976" list-type="enumerated" number-style="lower-alpha"><item> Investigate the IQR: 
+<list id="eip-idm467984896" list-type="enumerated" number-style="lower-roman"><item> In general, what is the IQR?</item>
+<item>State the IQR for each data set. </item>
+<item>What does the IQR tell us about the data? </item>
+</list>
+</item>
+<item> Investigate the coefficient of variation:
+<list id="eip-idm253571200" list-type="enumerated" number-style="lower-roman"><item>In general, what is the coefficient of variation? </item>
+<item>State the coefficient of variation for each data set. </item>
+<item>What does the coefficient of variation tell us about the data? </item>
+</list>
+</item>
+<item>The IQR and the coefficient of variation are telling us two different things about the data. Explain why this is occurring. </item>
+<item>In this situation, which is the best measure of variation to use when comparing the two data sets? Explain your reasoning?  </item>
+
+</list>
+</item>
+
+<item> Taking into account both centre and variation, do Albertans pay more out of pocket, on average, than Ontarians for a basic check-up at the dentist? Explain your answer by referring to the results in both questions 5 and 6.</item>
+</list></problem>
+
+<solution id="eip-599">
+  <para id="eip-668"><list id="eip-idm1023790112" list-type="enumerated" number-style="arabic"><item> Amount paid out of pocket for basic visit to dentist by Albertans – quantitative continuous
+<newline/>Amount paid out of pocket for basic visit to dentist by Ontarians – quantitative continuous
+</item>
+
+<item>
+<list id="eip-idm1178580560" list-type="enumerated" number-style="lower-alpha"><item>Convenience sampling </item>
+<item>It would not be appropriate because for a sample to be used to make an inference, it needs to be a good sample. This means it needs to be random, representative and a large enough sample size. As she is only asking her friends not every member of the population has an equal chance of being chosen, therefore it is not a random sample. Though she may have a diverse group of friends, it is unlikely that her friends form a representative sample of the populations of each province.  </item>
+</list>
+</item>
+
+<item><figure id="Boxplot3"><media id="Boxplot3a" alt="Boxplot for Exercise 3">
+    <image mime-type="image/png" src="../../media/Boxplot3.png"/>
+  </media>
+  
+<caption>Boxplot for Exercise 3
+  </caption></figure> </item>
+
+<item> <figure id="Table3a"><media id="Table3ai" alt="Descriptive statistics for Exercise 3 (Alberta)">
+    <image mime-type="image/png" src="../../media/Table3a.png"/>
+  </media>
+  
+<caption>Descriptive statistics for Exercise 3 (Alberta)
+  </caption></figure> 
+<newline/>
+<figure id="Table3b"><media id="Table3bi" alt="Descriptive statistics for Exercise 3 (Ontario)">
+    <image mime-type="image/png" src="../../media/Table3b.png"/>
+  </media>
+  
+<caption>Descriptive statistics for Exercise 3 (Ontario)
+  </caption></figure>
+</item>
+
+
+
+<item> 
+<list id="eip-idm1858538192" list-type="enumerated" number-style="lower-alpha"><item>Neither of the data sets has outliers. This means that none of Amal’s friends pay significantly more or less out of pocket than any of her other friends. </item>
+<item>As there are no outliers in either data sets, the mean cost out of pocket is the best measure of centre to use as the mean is not being skewed by the outliers and the mean is a well-known measure of centre.
+<newline/>
+Mean for Albertans= $64.40
+<newline/>Mean for Ontarians= $18.98
+ </item>
+<item>The Ontarians appear to be paying significantly less than Albertans out of pocket for basic visits to the dentist. In particular, they are paying, on average, $45.42 less (based on the mean). </item>
+</list>
+</item>
+
+<item>
+
+<list id="eip-idm1064793888" list-type="enumerated" number-style="lower-alpha"><item> 
+<list id="eip-idm946416928" list-type="enumerated" number-style="lower-roman"><item>The IQR is the interquartile range. It is the distance between the first and third quartiles. On the boxplot, it is the length of the box. It is the range where the middle 50% of the data values fall. </item>
+<item>IQR for Albertans= $38.81
+<newline/>IQR for Ontarians= $24.11
+ </item>
+<item> The cost out of pocket for Albertans is more volatile than for Ontarians, which suggests that Albertans are seeing greater differences in out of pocket prices than Ontarians (based on the IQR). </item>
+</list>
+</item>
+<item> 
+<list id="eip-idm1456384080" list-type="enumerated" number-style="lower-roman"><item>The coefficient of variation is a measure of relative variation. It is the ratio of the standard deviation to the mean. Therefore, it tells us how much variation there is relative to the mean. 
+It is useful to use when comparing two or more data sets that have different means as other measures of variation may be inflated by larger data values in the data set, while the coefficient of variation rarely is. 
+ </item>
+<item>Coefficient of variation for Albertans = 50.61%
+<newline/>Coefficient of variation for Ontarians = 75.58%
+ </item>
+<item>The cost out of pocket for Ontarians is more volatile than for Albertans, which suggests that Ontarians are seeing greater differences in out of pocket prices than Albertans (based on the coefficient of variation).  </item>
+</list>
+</item>
+<item> The IQR is larger for Albertans because the data values are larger. Therefore, the IQR is showing an inflated amount of variation for Albertans (compared to Ontarians). The CofV, on the other hand, takes into account the difference in the size of the data values (as it is a relative measure). This means it is not being inflated by the size of the data values. </item>
+<item>To compare the amount of variation, we want to use a relative measure as the means are not the same. Thus we want to use the coefficient of variation. </item>
+</list>
+</item>
+
+<item>On average, Albertans pay $64.40 out of pocket for a basic dental visit compared to $18.98 for Ontarians. But there is more variation for Ontarians compared to Albertans, which suggest that though Albertans pay more, their costs are more consistent (relative to the average). 
+If we take into account variation when finding the typical range of values that people pay out of pocket, we find that <newline/>Albertans typically pay $31.81 to $96.99 for a basic dental checkup. While patients in Ontario from the sample paid on average $4.63 to $33.33 out of pocket for a basic dental checkup. As the typical range of values overlap, we cannot say for certain that Albertans pay more on average than Ontarians. 
+ </item>
+</list></para></solution>
+</exercise><para id="delete_me">
+     <!-- Insert module text here -->
+  </para>
+</content>
+
+</document>

@@ -1,0 +1,243 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+
+<title>One population proportions test - C Lemieux</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m71320</md:content-id>
+  <md:title>One population proportions test - C Lemieux</md:title>
+  <md:abstract>proportions</md:abstract>
+  <md:uuid>6c6f3349-91b9-4710-8e41-7ad10f69f80c</md:uuid>
+</metadata>
+
+<content>
+  <para id="eip-767">In this section, we will learn how to do a hypothesis test for one population proportion. </para><para id="eip-454">In general, a one population proportion test is done when we are investigating only one random variable and the data is categorical. Further, we are examining a situation where we are concerned about the proportion, rate or percentage of the data that fit within one category.</para><para id="eip-946">Further, in this class, we are only examining the situation where the sampling distribution of sample proportions can be assumed to be normally distributed. The situation where it is not normally distributed is beyond the scope of this course.</para><para id="eip-508">To learn the one population proportion test, we will examine our eight-step hypothesis test. </para><note id="eip-565" type="tip">The central limit theorem for the sampling distributions of sample proportions is important for doing Step 3 of the hypothesis test. You may want to review it before continuing. </note><section id="eip-919"><title>Eight-step hypothesis test for proportion</title><para id="eip-2">
+The process of doing hypothesis tests becomes redundant as you see more and more of them. Having said that, there are differences between how the tests are performed. Students often get confused between what needs to be done for each type of test because there are so many similarities. Therefore, compare the steps of the three tests we've learned (i.e. one population means test when population standard deviation is known, one population means test when population standard deviation is unknown, and one population proportions test) to see both where they are SIMILAR and where they are DIFFERENT.
+</para>
+
+<list id="eip-idm404501200" list-type="enumerated" number-style="arabic" class="stepwise"><item><emphasis effect="bold">State <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ and <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+</emphasis>. As this is a one-population proportions test, our hypotheses will include the symbol <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+. There are three versions of the alternative hypothesis and there opposing null hypotheses: <list id="eip-idm318477824"><item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+&gt; some number (<m:math>
+<m:ci><m:msub><m:apply><m:lt/><m:pi/></m:apply><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>) vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:leq/><m:apply><m:lt/><m:pi/></m:apply><m:ci><m:msub><m:apply><m:lt/><m:pi/></m:apply><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math> </item> 
+
+<item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+&lt; some number (<m:math>
+<m:ci><m:msub><m:apply><m:lt/><m:pi/></m:apply><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>) vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:geq/><m:apply><m:lt/><m:pi/></m:apply><m:ci><m:msub><m:apply><m:lt/><m:pi/></m:apply><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math>  </item> 
+
+<item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+≠ some number (<m:math>
+<m:ci><m:msub><m:apply><m:lt/><m:pi/></m:apply><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>) vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:eq/><m:apply><m:lt/><m:pi/></m:apply><m:ci><m:msub><m:apply><m:lt/><m:pi/></m:apply><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math>  </item> 
+</list><para id="eip-548">For ease, we often write the null hypothesis simply as <m:math>
+<m:apply><m:eq/><m:ci>μ</m:ci><m:ci><m:msub><m:mi>μ</m:mi><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math> as we only care about the equality for the null. This results in the following:</para><list id="eip-759"><item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+&gt; <m:math>
+<m:ci><m:msub><m:apply><m:lt/><m:pi/></m:apply><m:mi>0</m:mi></m:msub></m:ci>
+</m:math> vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:eq/><m:apply><m:lt/><m:pi/></m:apply><m:ci><m:msub><m:apply><m:lt/><m:pi/></m:apply><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math> (right-tailed test) </item> 
+ 
+
+<item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+&lt; <m:math>
+<m:ci><m:msub><m:apply><m:lt/><m:pi/></m:apply><m:mi>0</m:mi></m:msub></m:ci>
+</m:math> vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:eq/><m:apply><m:lt/><m:pi/></m:apply><m:ci><m:msub><m:apply><m:lt/><m:pi/></m:apply><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math> 
+(left-tailed test) </item> 
+
+<item> <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:lt/><m:pi/></m:apply>
+</m:math>
+≠ <m:math>
+<m:ci><m:msub><m:apply><m:lt/><m:pi/></m:apply><m:mi>0</m:mi></m:msub></m:ci>
+</m:math> vs. <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>: <m:math>
+<m:apply><m:eq/><m:apply><m:lt/><m:pi/></m:apply><m:ci><m:msub><m:apply><m:lt/><m:pi/></m:apply><m:mi>0</m:mi></m:msub></m:ci></m:apply>
+</m:math>  
+ (two-tailed test) </item> </list><para id="eip-977">Notice how "some number" (i.e. <m:math>
+<m:ci><m:msub><m:apply><m:lt/><m:pi/></m:apply><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+) is the same both for <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math> and <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>. This is because they are opposites of each other. Therefore, the only thing that changes is the binary sign between them. 
+</para></item>
+
+
+
+<item><emphasis effect="bold">Summarize the sample data</emphasis>. For a one population proportions test, your evidence will consist of the number of successes or the sample proportion (either will be fine) and the sample size. 
+</item>
+
+
+
+<item><emphasis effect="bold">State and justify the model (or distribution) being used</emphasis>. As we are doing a hypothesis test for one population proportion, we will be using the standard normal distribution as our model. To use this model, we need to determine two things: 
+<list id="eip-idm365427168">
+<item> Does the situation follow a binomial distribution? To check this simply verify that there are only two options (success and failure). Though there are other conditions for the binomial distribution, this is by far the most important so make sure it is met. </item>
+<item> Is the sampling distribution of sample proportions normally distributed? To determine this, we use the central limit theorem, which states that we can assume the sampling distribution of proportions is normal if number of successes (<m:math>
+<m:apply><m:times/><m:ci>n</m:ci><m:pi/></m:apply>
+</m:math>) and failures (<m:math>
+<m:apply><m:times/><m:ci>n</m:ci><m:apply><m:minus/><m:cn>1</m:cn><m:pi/></m:apply></m:apply>
+</m:math>) are both at least five. Use the evidence (i.e. the actual counted number of successes) to determine if this is the case.  
+</item> </list>
+</item>
+
+
+
+<item><emphasis effect="bold">Choose an appropriate level of significance.</emphasis> Consider the implications of a Type I vs. a Type II error in choosing your level of significance, as well as any ethical considerations.</item>
+
+<item><emphasis effect="bold">Calculate the test statistic and related <emphasis effect="italics">p</emphasis>-value</emphasis>. The test statistic for this situation is <m:math>
+<m:apply><m:power/><m:ci>z</m:ci><m:cn>*</m:cn></m:apply>
+</m:math>= <m:math>
+     <m:mfrac><m:mrow><m:mover accent="true">
+  <m:mrow>
+    <m:mi> p </m:mi>
+  </m:mrow>
+  <m:mo> ^</m:mo>
+</m:mover>
+      <m:mo>-</m:mo><m:msub><m:apply><m:lt/><m:pi/></m:apply><m:mn>0</m:mn></m:msub></m:mrow>
+      <m:mrow><m:msqrt> <m:msub><m:apply><m:lt/><m:pi/></m:apply><m:mn>0</m:mn></m:msub> <m:mo>(1-</m:mo><m:msub><m:apply><m:lt/><m:pi/></m:apply><m:mn>0</m:mn></m:msub>  <m:mo>) </m:mo> <m:mo>/</m:mo><m:mi>n</m:mi></m:msqrt>
+      </m:mrow></m:mfrac>
+     </m:math>. The <emphasis effect="italics">p</emphasis>-value is then found by finding the probability in the tail of the standard normal distribution where the test statistic is the boundary of the tail. 
+<list id="eip-idm1291905248">
+<item>If it is a right-tailed test, find P(Z &gt; <m:math>
+<m:apply><m:power/><m:ci>z</m:ci><m:cn>*</m:cn></m:apply>
+</m:math> )  </item>
+
+<item>If it is a left-tailed test, find P(Z &lt; <m:math>
+<m:apply><m:power/><m:ci>z</m:ci><m:cn>*</m:cn></m:apply>
+</m:math> )  </item>
+<item>If it is a two-tailed test, find P(Z &gt; |<m:math>
+<m:apply><m:power/><m:ci>z</m:ci><m:cn>*</m:cn></m:apply>
+</m:math>| ) times 2.  </item>
+
+</list>
+
+
+ </item>
+<item><emphasis effect="bold">Discuss what the <emphasis effect="italics">p</emphasis>-value measures in context</emphasis>. Your sentence will look something like this: The probability we observed a sample proportion of [insert appropriate inequality based on tail of test] **, assuming [insert null hypothesis] is true, is [insert <emphasis effect="italics">p</emphasis>-value].</item>
+<item><emphasis effect="bold">Make a decision.</emphasis> 
+<list id="eip-idm1310056528"><item>Do not reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ if <emphasis effect="italics">p</emphasis>-value is greater than or equal to <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+ </item>
+<item>Reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ if <emphasis effect="italics">p</emphasis>-value less than <m:math>
+<m:apply><m:lt/><m:ci>α</m:ci></m:apply>
+</m:math>
+ </item>
+</list>
+</item>
+<item><emphasis effect="bold">Offer a concluding sentence.</emphasis> Using accessible language summarize your conclusion in sentence form within the context of the problem and referring to the alternative hypothesis.</item>
+</list></section><example id="eip-752"><para id="eip-158">A charitable organization wanted to see if a new form of mail marketing would change the percentage of people who replied. In the past the percentage of people who would reply to mail marketing was 1 in 175. A sample of 2000 letters was sent out. A total of 20 people responded. Is there any significant change in the percentage of respondents? 
+</para><section id="eip-524"><title>Solution</title><list id="eip-idm647328176" list-type="enumerated" number-style="arabic" class="stepwise"><item><emphasis effect="bold">State <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ and <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+</emphasis>. We define  <m:math>
+ <m:apply><m:lt/><m:pi/></m:apply></m:math> in this problem to be the population proportion of respondents to the new mail marketing campaign. 
+
+ <newline/><m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>A</m:mi></m:msub></m:ci>
+</m:math>
+: <m:math>
+<m:apply><m:neq/><m:apply><m:lt/><m:pi/></m:apply><m:cn>1/175 = 0.0057</m:cn></m:apply>
+</m:math>
+ <newline/><m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+: <m:math>
+<m:apply><m:eq/><m:apply><m:lt/><m:pi/></m:apply><m:cn>0.0057</m:cn></m:apply>
+</m:math>
+     
+<newline/> Note: This is a two-tailed test. 
+
+</item>
+<item><emphasis effect="bold">Summarize the sample data</emphasis>. The sample size is 2000, the number of successes is 20 and the sample proportion is 20/2000=0.01.</item>
+<item><emphasis effect="bold">State and justify the model (or distribution) being used</emphasis>. As this is a one population proportions tests, we want to use the standard normal distribution. To do this, we need to ensure that 1) the situation meets the conditions of the binomial distribution and 2) the sampling distribution of sample proportions is normal. 
+<list id="eip-idm347627360">
+<item>The only condition we need to check for the binomial distribution is whether there are only two options. In this case, either the respondents submit the survey or they do not. Therefore, this situation meets this condition. </item>
+<item> The sampling distribution of sample proportions can be assumed to be normal as the number of successes (20) and the number of failures (2000-20=1980) are both at least 5.  </item>
+</list>
+</item>
+
+
+<item><emphasis effect="bold">Choose an appropriate level of significance.</emphasis> The type I error in this situation is that the charity determines that there is change, when in fact there is not. While a type II error is that the charity does not have enough evidence to determine there is a change, when in fact there has been one. Most charitable organizations rely on fundraising as a main source of income. Therefore, it would be better to err on the side of making a Type II error over a Type I error. Therefore we will set alpha at 10%.  This means, that we reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+ if the <emphasis effect="italics">p</emphasis>-value &lt; 0.10.</item>
+
+
+<item><emphasis effect="bold">Calculate the test statistic and related <emphasis effect="italics">p</emphasis>-value</emphasis>. The test statistic is found as follows: Z* = (0.01 – 0.0057)/sqrt((0.0057*0.9943)/2000) = 2.54. As it is a two-tailed test, we find 2*P(Z&gt; 2.54) using the Excel function "=2*(1-NORM.S.DIST(2.54,1))". This gives us p = 0.0111. </item>
+
+
+<item><emphasis effect="bold">Discuss what the <emphasis effect="italics">p</emphasis>-value measures in context</emphasis>. The probability of getting a sample proportion of at least 1% (times 2), with an assumed population proportion of 0.57% rate of response to the survey, is 1.11%. </item>
+
+<item><emphasis effect="bold">Make a decision.</emphasis> Since p (0.0111) &lt; 0.10, we reject <m:math>
+<m:ci><m:msub><m:mi>H</m:mi><m:mi>0</m:mi></m:msub></m:ci>
+</m:math>
+. </item>
+<item><emphasis effect="bold">Offer a concluding sentence.</emphasis> There is sufficient evidence to indicate that there is a significant change in the percentage of respondents with the new form of mail marketing.</item>
+
+</list></section>
+</example><para id="delete_me">
+     <!-- Insert module text here -->
+  </para>
+</content>
+
+</document>
